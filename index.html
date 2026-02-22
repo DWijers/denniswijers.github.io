@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Dennis Wijers | Space Systems, Secure Cloud, Orbital Compute" />
+  <title>Dennis Wijers</title>
+
+  <style>
+    :root{
+      --bg: #0b1020;
+      --card: rgba(255,255,255,0.06);
+      --card2: rgba(255,255,255,0.08);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.70);
+      --faint: rgba(255,255,255,0.50);
+      --border: rgba(255,255,255,0.12);
+      --accent: #7dd3fc;
+      --accent2: #a78bfa;
+      --shadow: 0 16px 50px rgba(0,0,0,0.35);
+      --radius: 18px;
+      --max: 1040px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #f6f7fb;
+        --card: rgba(0,0,0,0.04);
+        --card2: rgba(0,0,0,0.06);
+        --text: rgba(10,15,25,0.92);
+        --muted: rgba(10,15,25,0.70);
+        --faint: rgba(10,15,25,0.55);
+        --border: rgba(10,15,25,0.12);
+        --shadow: 0 16px 50px rgba(0,0,0,0.12);
+      }
+    }
+
+    *{ box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--text);
+      background: radial-gradient(1200px 700px at 20% 10%, rgba(167,139,250,0.18), transparent 60%),
+                  radial-gradient(1000px 700px at 80% 0%, rgba(125,211,252,0.18), transparent 55%),
+                  radial-gradient(1200px 900px at 50% 100%, rgba(56,189,248,0.10), transparent 55%),
+                  var(--bg);
+      line-height: 1.55;
+    }
+
+    a{ color: inherit; text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 42px 18px 70px;
+    }
+
+    .topbar{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .brand{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .dot{
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 10px 20px rgba(125,211,252,0.25);
+    }
+
+    .name{
+      font-weight: 720;
+      letter-spacing: -0.02em;
+    }
+
+    .links{
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .links a{
+      padding: 8px 10px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+    }
+    .links a:hover{
+      text-decoration: none;
+      border-color: var(--border);
+      background: var(--card);
+    }
+
+    .hero{
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, var(--card), transparent 75%);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .kicker{
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1{
+      margin: 10px 0 8px;
+      font-size: clamp(30px, 3.4vw, 46px);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+    }
+
+    .sub{
+      max-width: 78ch;
+      color: var(--muted);
+      font-size: 17px;
+      margin: 0 0 18px;
+    }
+
+    .cta{
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      font-weight: 650;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .btn:hover{
+      text-decoration: none;
+      background: var(--card2);
+    }
+    .btn.primary{
+      border-color: transparent;
+      background: linear-gradient(135deg, rgba(125,211,252,0.25), rgba(167,139,250,0.22));
+    }
+
+    .grid{
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+      .hero{ padding: 22px; }
+    }
+
+    .card{
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card);
+      padding: 18px;
+    }
+    .card h2{
+      margin: 0 0 10px;
+      font-size: 15px;
+      letter-spacing: -0.01em;
+    }
+    .card p{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    ul{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    li{ margin: 7px 0; }
+
+    .pillrow{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .pill{
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      padding: 7px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .foot{
+      margin-top: 18px;
+      color: var(--faint);
+      font-size: 13px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="dot" aria-hidden="true"></div>
+        <div class="name">Dennis Wijers</div>
+      </div>
+      <nav class="links" aria-label="Quick links">
+        <a href="#focus">Focus</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <section class="hero">
+      <div class="kicker">Space systems • secure cloud • orbital compute</div>
+      <h1>Space infrastructure and mission systems, built for real constraints.</h1>
+      <p class="sub">
+        I work on satellite systems and the space-to-cloud stack, with experience across national security space,
+        sovereign cloud environments, and LEO government deployments. I am focused on the convergence of constellations,
+        data movement, and where compute should run as bandwidth and power become the binding constraints.
+      </p>
+
+      <div class="cta">
+        <a class="btn primary" href="Dennis_Wijers_Resume.pdf" target="_blank" rel="noopener">
+          Download resume (PDF)
+        </a>
+        <a class="btn" href="mailto:dennis.wijers86@gmail.com">
+          Email
+        </a>
+        <!-- Optional: add LinkedIn or GitHub links here -->
+        <!-- <a class="btn" href="https://www.linkedin.com/in/YOURHANDLE" target="_blank" rel="noopener">LinkedIn</a> -->
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card" id="focus">
+        <h2>What I focus on</h2>
+        <ul>
+          <li>Satellite systems and ground integration in regulated and mission environments</li>
+          <li>Space-to-cloud architecture, secure deployment boundaries, and operational readiness</li>
+          <li>Orbital compute and space-based data processing, including downlink and data gravity tradeoffs</li>
+          <li>Translating defense requirements into buildable product and execution plans</li>
+        </ul>
+
+        <div class="pillrow" aria-label="Tags">
+          <span class="pill">LEO SATCOM</span>
+          <span class="pill">Ground systems</span>
+          <span class="pill">Sovereign cloud</span>
+          <span class="pill">Security governance</span>
+          <span class="pill">Cross-domain constraints</span>
+        </div>
+      </div>
+
+      <div class="card" id="experience">
+        <h2>Recent roles</h2>
+        <p><b>Amazon</b> — SATCOM Field Operations Manager, LEO for Government (2025–Present)</p>
+        <p><b>AWS</b> — Senior Technical Program Manager, Foundational Security Services (2025)</p>
+        <p><b>Microsoft</b> — Director, Strategic Ventures; Senior Product Manager (2021–2025)</p>
+        <p><b>SAIC</b> — System Engineer Principal, OPIR Architecture (2020–2021)</p>
+        <p><b>U.S. Air Force</b> — Captain, acquisition and ops (2010–2020)</p>
+      </div>
+    </section>
+
+    <section class="card" id="contact" style="margin-top:16px;">
+      <h2>Contact</h2>
+      <p>
+        Email is best:
+        <a href="mailto:dennis.wijers86@gmail.com">dennis.wijers86@gmail.com</a>
+      </p>
+      <p class="foot">
+        Built on GitHub Pages. Minimal, fast, and easy to update.
+      </p>
+    </section>
+  </div>
+</body>
+</html>
