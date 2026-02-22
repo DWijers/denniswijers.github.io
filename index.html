@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Dennis Wijers | National Security Space, Sovereign Cloud, Orbital Compute" />
+  <meta name="description" content="Dennis Wijers | Space Systems, Sovereign Infrastructure, Orbital Compute" />
   <title>Dennis Wijers</title>
 
   <style>
@@ -40,6 +40,7 @@
     *{ box-sizing: border-box; }
     html, body { height: 100%; }
     html { scroll-behavior: smooth; }
+
     body{
       margin: 0;
       font-family: var(--sans);
@@ -130,8 +131,17 @@
       letter-spacing: -0.03em;
     }
 
+    .thesis{
+      margin: 0 0 14px;
+      max-width: 90ch;
+      font-size: 15px;
+      color: var(--text);
+      opacity: 0.92;
+    }
+    .thesis b{ font-weight: 760; }
+
     .sub{
-      max-width: 84ch;
+      max-width: 90ch;
       color: var(--muted);
       font-size: 17px;
       margin: 0 0 18px;
@@ -227,7 +237,7 @@
     }
 
     /* Anchor targets */
-    #focus, #experience, #contact, #thesis { scroll-margin-top: 18px; }
+    #focus, #roles, #thesis2, #contact { scroll-margin-top: 18px; }
   </style>
 </head>
 
@@ -239,21 +249,27 @@
         <div class="name">Dennis Wijers</div>
       </div>
       <nav class="links" aria-label="Quick links">
-        <a href="#focus">Scope</a>
-        <a href="#thesis">Systems</a>
-        <a href="#experience">Experience</a>
+        <a href="#focus">What I run</a>
+        <a href="#thesis2">Orbital compute</a>
+        <a href="#roles">Roles</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
 
     <section class="hero">
-      <div class="kicker">National security space • sovereign cloud • orbital compute</div>
-      <h1>National Security Space and Sovereign Infrastructure Leadership</h1>
+      <div class="kicker">space systems • sovereign infrastructure • government scale</div>
+      <h1>Space Systems Leadership for Government and Regulated Markets</h1>
+
+      <p class="thesis">
+        <b>Operating thesis:</b> The next durable advantage in LEO will be defined by compute placement and data movement,
+        not connectivity alone. Downlink economics, power and thermal constraints, and classification boundaries will drive
+        where inference runs and how space and terrestrial cloud stacks are designed together.
+      </p>
+
       <p class="sub">
-        I operate at the intersection of satellite systems, sovereign cloud architecture, and mission-critical infrastructure.
-        My work spans national security space acquisition, real-time satellite data systems at the National Reconnaissance Office,
-        secure cloud deployment at Microsoft and AWS, and LEO government readiness at Amazon. I lead programs where architecture
-        decisions must withstand classified networks, regulatory scrutiny, operational timelines, and enterprise-scale deployment.
+        I lead programs that take space and cloud capabilities from technical proof to fielded deployment in defense and sovereign environments.
+        My background spans real-time satellite data systems at the National Reconnaissance Office, portfolio roles in the GPS enterprise,
+        sovereign cloud delivery at Microsoft and AWS, and government LEO operational readiness at Amazon.
       </p>
 
       <div class="cta">
@@ -271,24 +287,25 @@
 
     <section class="grid">
       <div class="card" id="focus">
-        <h2>Scope of responsibility</h2>
+        <h2>What I run</h2>
         <ul>
-          <li>Led real-time satellite data dissemination systems supporting missile defense and intelligence missions</li>
-          <li>Advised portfolio leadership across multi-billion-dollar national security satellite programs</li>
-          <li>Directed secure cloud and sovereign environment deployments achieving Authorization to Operate</li>
-          <li>Built and operationalized field readiness and lifecycle models for government LEO satellite systems</li>
-          <li>Aligned engineering, product, acquisition, and mission stakeholders across regulated environments</li>
+          <li>Government scaling for space infrastructure: moving from prototype to deployable program inside DoD, IC, and sovereign environments</li>
+          <li>Mission integration: aligning product, engineering, ops, security, and customer stakeholders against delivery timelines and accreditation boundaries</li>
+          <li>Architecture decisions under constraint: bandwidth, latency, power, thermal envelopes, and cross-domain segmentation</li>
+          <li>Operating models for constellations: field readiness, lifecycle support, and repeatable deployment patterns</li>
+          <li>Capture and growth execution: shaping demand signals, proposals, and partner ecosystems for regulated markets</li>
         </ul>
+
         <div class="pillrow" aria-label="Tags">
-          <span class="pill">LEO SATCOM</span>
-          <span class="pill">ISR data systems</span>
+          <span class="pill">VP Gov / Head of Federal</span>
+          <span class="pill">Mission integration</span>
+          <span class="pill">LEO operations</span>
           <span class="pill">Sovereign cloud</span>
-          <span class="pill">Security governance</span>
           <span class="pill">Cross-domain constraints</span>
         </div>
       </div>
 
-      <div class="card" id="experience">
+      <div class="card" id="roles">
         <h2>Recent roles</h2>
         <p><b>Amazon</b> — SATCOM Field Operations Manager, LEO for Government (2025–Present)</p>
         <p><b>AWS</b> — Senior Technical Program Manager, Foundational Security Services (2025)</p>
@@ -298,16 +315,16 @@
       </div>
     </section>
 
-    <section class="card" id="thesis" style="margin-top:16px;">
-      <h2>Systems perspective</h2>
+    <section class="card" id="thesis2" style="margin-top:16px;">
+      <h2>Orbital compute and AI infrastructure</h2>
       <p>
-        I work on systems that must function across classified and cross-domain boundaries, sovereign and disconnected cloud regions,
-        and bandwidth- and power-constrained environments. Many space programs fail at integration rather than technology.
+        Orbital compute changes system design. It reshapes ground architecture, tasking models, security boundaries, and cost structure.
+        When downlink is constrained, moving inference closer to collection becomes an architecture decision rather than an optimization.
       </p>
       <p>
-        As constellations scale, the constraint shifts from launch to compute placement, data gravity, downlink economics, and security
-        boundary design. I am particularly interested in orbital compute and space-based data processing architectures where space and
-        terrestrial cloud are designed as a unified stack from the beginning.
+        I am focused on companies building satellite constellations with integrated data pipelines, orbital edge compute platforms,
+        and space-to-cloud systems where compute placement is part of the product. I am most useful where success requires both technical
+        system decisions and the ability to field capability inside defense and sovereign markets.
       </p>
     </section>
 
