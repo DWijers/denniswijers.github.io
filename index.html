@@ -38,18 +38,25 @@
     }
 
     *{ box-sizing: border-box; }
-    html, body { height: 100%; }
+    html, body { min-height: 100%; }
     html { scroll-behavior: smooth; }
+
+    /* Put background on html to prevent bottom-band rendering issues */
+    html{
+      background: radial-gradient(1200px 700px at 20% 10%, rgba(167,139,250,0.18), transparent 60%),
+                  radial-gradient(1000px 700px at 80% 0%, rgba(125,211,252,0.18), transparent 55%),
+                  radial-gradient(1200px 900px at 50% 100%, rgba(56,189,248,0.10), transparent 55%),
+                  var(--bg);
+    }
 
     body{
       margin: 0;
       font-family: var(--sans);
       color: var(--text);
-      background: radial-gradient(1200px 700px at 20% 10%, rgba(167,139,250,0.18), transparent 60%),
-                  radial-gradient(1000px 700px at 80% 0%, rgba(125,211,252,0.18), transparent 55%),
-                  radial-gradient(1200px 900px at 50% 100%, rgba(56,189,248,0.10), transparent 55%),
-                  var(--bg);
+      background: transparent;
       line-height: 1.55;
+      overflow-x: hidden;
+      font-size: 16px; /* normalize */
     }
 
     a{ color: inherit; text-decoration: none; }
@@ -73,6 +80,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      min-width: 180px;
     }
 
     .dot{
@@ -81,11 +89,13 @@
       border-radius: 50%;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       box-shadow: 0 10px 20px rgba(125,211,252,0.25);
+      flex: 0 0 auto;
     }
 
     .name{
       font-weight: 720;
       letter-spacing: -0.02em;
+      font-size: 16px;
     }
 
     .links{
@@ -134,7 +144,7 @@
     .thesis{
       margin: 0 0 14px;
       max-width: 92ch;
-      font-size: 15px;
+      font-size: 15px; /* tightened so it doesn't overpower */
       color: var(--text);
       opacity: 0.92;
     }
@@ -181,6 +191,7 @@
       grid-template-columns: 1.15fr 0.85fr;
       gap: 16px;
       margin-top: 16px;
+      align-items: start;
     }
 
     @media (max-width: 900px){
@@ -194,11 +205,13 @@
       background: var(--card);
       padding: 18px;
     }
+
     .card h2{
       margin: 0 0 10px;
       font-size: 15px;
       letter-spacing: -0.01em;
     }
+
     .card p{
       margin: 0 0 10px;
       color: var(--muted);
@@ -219,6 +232,7 @@
       gap: 8px;
       margin-top: 10px;
     }
+
     .pill{
       font-size: 12px;
       color: var(--muted);
@@ -230,7 +244,7 @@
     }
 
     .note{
-      margin-top: 8px;
+      margin-top: 10px;
       font-size: 13px;
       color: var(--faint);
       line-height: 1.45;
@@ -255,6 +269,7 @@
         <div class="dot" aria-hidden="true"></div>
         <div class="name">Dennis Wijers</div>
       </div>
+
       <nav class="links" aria-label="Quick links">
         <a href="#focus">What I run</a>
         <a href="#thesis2">Orbital compute</a>
@@ -268,15 +283,15 @@
       <h1>Space Systems Leadership for Government and Regulated Markets</h1>
 
       <p class="thesis">
-        <b>Operating thesis:</b> The next durable advantage in Low Earth Orbit will be defined by compute placement and data movement,
-        not connectivity alone. Downlink economics, power and thermal constraints, and classification boundaries will drive where inference
-        runs and how space and terrestrial cloud stacks are designed together.
+        <b>Operating thesis:</b> The next durable advantage in <b>Low Earth Orbit (LEO)</b> will be defined by compute placement and data movement,
+        not connectivity alone. Downlink economics, power and thermal constraints, and classification boundaries will drive where inference runs and
+        how space and terrestrial cloud stacks are designed together.
       </p>
 
       <p class="sub">
         I lead programs that take space and cloud capabilities from technical proof to fielded deployment in defense and sovereign environments.
         My background spans real-time satellite data systems at the National Reconnaissance Office, portfolio roles in the GPS enterprise,
-        sovereign cloud delivery at Microsoft and AWS, and government operational readiness for Amazon Leo deployments.
+        sovereign cloud delivery at Microsoft and AWS, and government operational readiness for Amazon <b>Leo</b> deployments.
       </p>
 
       <div class="cta">
@@ -306,7 +321,7 @@
         <div class="pillrow" aria-label="Tags">
           <span class="pill">VP Gov / Head of Federal</span>
           <span class="pill">Mission integration</span>
-          <span class="pill">Low Earth Orbit systems</span>
+          <span class="pill">Low Earth Orbit (LEO)</span>
           <span class="pill">Sovereign cloud</span>
           <span class="pill">Cross-domain constraints</span>
         </div>
@@ -314,7 +329,7 @@
 
       <div class="card" id="roles">
         <h2>Recent roles</h2>
-        <p><b>Amazon</b> — SATCOM Field Operations Manager, Amazon Leo for Government (2025–Present)</p>
+        <p><b>Amazon</b> — SATCOM Field Operations Manager, Amazon <b>Leo</b> for Government (2025–Present)</p>
         <p><b>AWS</b> — Senior Technical Program Manager, Foundational Security Services (2025)</p>
         <p><b>Microsoft</b> — Director, Strategic Ventures; Senior Product Manager (2021–2025)</p>
         <p><b>SAIC</b> — System Engineer Principal, OPIR Architecture (2020–2021)</p>
