@@ -1,370 +1,385 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Dennis Wijers | Space Systems, Sovereign Infrastructure, Orbital Compute" />
-  <title>Dennis Wijers</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dennis Wijers is a technical program leader working across applied AI, cloud, space systems, cybersecurity, and secure infrastructure.">
+  <meta name="theme-color" content="#f3f0e8">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://denniswijers.com/">
+  <meta property="og:title" content="Dennis Wijers — Technical Program Leader">
+  <meta property="og:description" content="Applied AI, cloud, space systems, cybersecurity, and secure infrastructure.">
+  <meta property="og:image" content="https://denniswijers.com/og.png">
+  <meta property="og:image:alt" content="Dennis Wijers — Technical Program Leader">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dennis Wijers — Technical Program Leader">
+  <meta name="twitter:description" content="Applied AI, cloud, space systems, cybersecurity, and secure infrastructure.">
+  <meta name="twitter:image" content="https://denniswijers.com/og.png">
+  <link rel="canonical" href="https://denniswijers.com/">
+  <title>Dennis Wijers — Technical Program Leader</title>
 
   <style>
-    :root{
-      --bg: #0b1020;
-      --card: rgba(255,255,255,0.06);
-      --card2: rgba(255,255,255,0.08);
-      --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.70);
-      --faint: rgba(255,255,255,0.50);
-      --border: rgba(255,255,255,0.12);
-      --accent: #7dd3fc;
-      --accent2: #a78bfa;
-      --shadow: 0 16px 50px rgba(0,0,0,0.35);
-      --radius: 18px;
-      --max: 1040px;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    :root {
+      --paper: #f3f0e8;
+      --ink: #171917;
+      --muted: #5e625d;
+      --line: #c9c7be;
+      --accent: #d65a31;
+      --accent-dark: #9f391b;
+      --panel: #e8e4da;
+      --white: #fffdf8;
+      --max: 1180px;
+      --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
     }
 
-    @media (prefers-color-scheme: light){
-      :root{
-        --bg: #f6f7fb;
-        --card: rgba(0,0,0,0.04);
-        --card2: rgba(0,0,0,0.06);
-        --text: rgba(10,15,25,0.92);
-        --muted: rgba(10,15,25,0.70);
-        --faint: rgba(10,15,25,0.55);
-        --border: rgba(10,15,25,0.12);
-        --shadow: 0 16px 50px rgba(0,0,0,0.12);
-      }
-    }
-
-    *{ box-sizing: border-box; }
-    html, body { min-height: 100%; }
+    * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
-    /* Put background on html to prevent bottom-band rendering issues */
-    html{
-      background: radial-gradient(1200px 700px at 20% 10%, rgba(167,139,250,0.18), transparent 60%),
-                  radial-gradient(1000px 700px at 80% 0%, rgba(125,211,252,0.18), transparent 55%),                
-                  var(--bg);
-    }
-
-    body{
+    body {
       margin: 0;
+      background: var(--paper);
+      color: var(--ink);
       font-family: var(--sans);
-      color: var(--text);
-      background: transparent;
       line-height: 1.55;
-      overflow-x: hidden;
-      font-size: 16px; /* normalize */
+      -webkit-font-smoothing: antialiased;
     }
 
-    a{ color: inherit; text-decoration: none; }
-    a:hover{ text-decoration: underline; }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 
-    .wrap{
-      max-width: var(--max);
+    .shell {
+      width: min(calc(100% - 40px), var(--max));
       margin: 0 auto;
-      padding: 42px 18px 70px;
     }
 
-    .topbar{
+    .topbar {
+      min-height: 88px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 22px;
+      gap: 24px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .brand{
+    .wordmark {
+      font-weight: 760;
+      letter-spacing: -0.03em;
+      text-decoration: none;
+    }
+
+    .nav {
       display: flex;
+      gap: 24px;
       align-items: center;
-      gap: 12px;
-      min-width: 180px;
-    }
-
-    .dot{
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 10px 20px rgba(125,211,252,0.25);
-      flex: 0 0 auto;
-    }
-
-    .name{
-      font-weight: 720;
-      letter-spacing: -0.02em;
-      font-size: 16px;
-    }
-
-    .links{
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      color: var(--muted);
       font-size: 14px;
     }
 
-    .links a{
-      padding: 8px 10px;
-      border: 1px solid transparent;
-      border-radius: 999px;
-    }
-    .links a:hover{
-      text-decoration: none;
-      border-color: var(--border);
-      background: var(--card);
-    }
+    .nav a { color: var(--muted); text-decoration: none; }
+    .nav a:hover { color: var(--ink); }
 
-    .hero{
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, var(--card), transparent 75%);
-      box-shadow: var(--shadow);
-      padding: 28px;
-    }
-
-    .kicker{
-      font-family: var(--mono);
-      font-size: 13px;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    h1{
-      margin: 10px 0 10px;
-      font-size: clamp(30px, 3.4vw, 46px);
-      line-height: 1.12;
-      letter-spacing: -0.03em;
-    }
-
-    .thesis{
-      margin: 0 0 14px;
-      max-width: 92ch;
-      font-size: 15px; /* tightened so it doesn't overpower */
-      color: var(--text);
-      opacity: 0.92;
-    }
-    .thesis b{ font-weight: 760; }
-
-    .sub{
-      max-width: 92ch;
-      color: var(--muted);
-      font-size: 17px;
-      margin: 0 0 18px;
-    }
-
-    .cta{
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 18px;
-    }
-
-    .btn{
+    .status {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 12px 14px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: var(--card);
-      color: var(--text);
-      font-weight: 650;
-      font-size: 14px;
-      text-decoration: none;
-    }
-    .btn:hover{
-      text-decoration: none;
-      background: var(--card2);
-    }
-    .btn.primary{
-      border-color: transparent;
-      background: linear-gradient(135deg, rgba(125,211,252,0.25), rgba(167,139,250,0.22));
-    }
-
-    .grid{
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 16px;
-      margin-top: 16px;
-      align-items: start;
-    }
-
-    @media (max-width: 900px){
-      .grid{ grid-template-columns: 1fr; }
-      .hero{ padding: 22px; }
-    }
-
-    .card{
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--card);
-      padding: 18px;
-    }
-
-    .card h2{
-      margin: 0 0 10px;
-      font-size: 15px;
-      letter-spacing: -0.01em;
-    }
-
-    .card p{
-      margin: 0 0 10px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    ul{
-      margin: 10px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-    li{ margin: 7px 0; }
-
-    .pillrow{
-      display: flex;
-      flex-wrap: wrap;
       gap: 8px;
-      margin-top: 10px;
-    }
-
-    .pill{
-      font-size: 12px;
       color: var(--muted);
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.03);
-      padding: 7px 10px;
-      border-radius: 999px;
-      white-space: nowrap;
+      font-family: var(--mono);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
 
-    .note{
-      margin-top: 10px;
-      font-size: 13px;
-      color: var(--faint);
-      line-height: 1.45;
+    .status::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(214, 90, 49, 0.13);
     }
 
-    .foot{
-      margin-top: 18px;
-      color: var(--faint);
-      font-size: 13px;
-      text-align: center;
+    .hero {
+      min-height: 680px;
+      display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
+      gap: clamp(40px, 8vw, 120px);
+      align-items: center;
+      padding: 88px 0 96px;
+      border-bottom: 1px solid var(--line);
     }
 
-    /* Anchor targets */
-    #focus, #roles, #thesis2, #contact { scroll-margin-top: 18px; }
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--accent-dark);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(52px, 8.2vw, 108px);
+      line-height: 0.92;
+      letter-spacing: -0.072em;
+      max-width: 8ch;
+    }
+
+    .hero-copy { align-self: end; padding-bottom: 8px; }
+
+    .hero-copy h2 {
+      margin: 0 0 28px;
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 540;
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      max-width: 16ch;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      max-width: 640px;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 21px);
+    }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 38px; }
+
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 12px 18px;
+      border: 1px solid var(--ink);
+      background: transparent;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+    }
+
+    .button.primary { background: var(--ink); color: var(--white); }
+    .button:hover { transform: translateY(-2px); background: var(--ink); color: var(--white); }
+    .button.primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+
+    .section {
+      display: grid;
+      grid-template-columns: 0.42fr 1.58fr;
+      gap: clamp(40px, 8vw, 120px);
+      padding: 92px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-label {
+      margin: 0;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .section-intro {
+      margin: 0 0 50px;
+      max-width: 780px;
+      font-size: clamp(27px, 4vw, 46px);
+      line-height: 1.12;
+      letter-spacing: -0.045em;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid var(--line);
+    }
+
+    .work-item {
+      min-height: 230px;
+      padding: 28px 28px 32px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .work-item:nth-child(odd) { padding-right: 36px; border-right: 1px solid var(--line); }
+    .work-item:nth-child(even) { padding-left: 36px; }
+    .work-number { color: var(--accent-dark); font-family: var(--mono); font-size: 12px; }
+    .work-item h3 { margin: 30px 0 12px; font-size: 22px; letter-spacing: -0.03em; }
+    .work-item p { margin: 0; color: var(--muted); }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .impact { min-height: 210px; padding: 28px; background: var(--panel); }
+    .impact strong {
+      display: block;
+      margin-bottom: 48px;
+      color: var(--accent-dark);
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+    .impact span { color: var(--muted); font-size: 14px; }
+
+    .background { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 70px; }
+    .role { padding-top: 22px; border-top: 1px solid var(--line); }
+    .role h3 { margin: 0 0 8px; font-size: 21px; letter-spacing: -0.03em; }
+    .role p { margin: 0; color: var(--muted); }
+
+    .about-panel { padding: clamp(30px, 5vw, 64px); background: var(--ink); color: var(--white); }
+    .about-panel blockquote {
+      margin: 0;
+      max-width: 900px;
+      font-size: clamp(28px, 4.5vw, 54px);
+      line-height: 1.1;
+      letter-spacing: -0.048em;
+    }
+    .about-panel p { margin: 36px 0 0; max-width: 680px; color: #bfc2bb; font-size: 17px; }
+
+    .footer {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: end;
+      padding: 80px 0 44px;
+    }
+    .footer h2 { margin: 0 0 20px; font-size: clamp(38px, 6vw, 72px); letter-spacing: -0.06em; line-height: 1; }
+    .footer-email { color: var(--accent-dark); font-size: 18px; font-weight: 700; }
+    .footer-meta { color: var(--muted); font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    @media (max-width: 900px) {
+      .status { display: none; }
+      .hero, .section { grid-template-columns: 1fr; }
+      .hero { min-height: auto; gap: 64px; padding: 70px 0 78px; }
+      .hero-copy { align-self: auto; }
+      .impact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 620px) {
+      .shell { width: min(calc(100% - 28px), var(--max)); }
+      .topbar { min-height: 72px; }
+      .nav a:not(:last-child) { display: none; }
+      .hero h1 { font-size: clamp(50px, 18vw, 76px); }
+      .actions { display: grid; }
+      .button { width: 100%; }
+      .section { padding: 72px 0; }
+      .work-grid, .background, .impact-grid { grid-template-columns: 1fr; }
+      .work-item:nth-child(odd), .work-item:nth-child(even) { padding: 26px 0; border-right: 0; }
+      .impact { min-height: 170px; }
+      .footer { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button { transition: none; }
+    }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dennis Wijers",
+    "url": "https://denniswijers.com/",
+    "jobTitle": "Technical Program Leader",
+    "sameAs": [
+      "https://www.linkedin.com/in/denniswijers/",
+      "https://github.com/DWijers"
+    ]
+  }
+  </script>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="topbar">
-      <div class="brand">
-        <div class="dot" aria-hidden="true"></div>
-        <div class="name">Dennis Wijers</div>
-      </div>
+  <header class="shell topbar">
+    <a class="wordmark" href="#top" aria-label="Dennis Wijers, home">DW</a>
+    <div class="status">Northern Virginia · United States</div>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#work">Work</a>
+      <a href="#background">Background</a>
+      <a href="#connect">Connect</a>
+    </nav>
+  </header>
 
-      <nav class="links" aria-label="Quick links">
-        <a href="#focus">What I run</a>
-        <a href="#thesis2">Orbital compute</a>
-        <a href="#roles">Roles</a>
-        <a href="#contact">Contact</a>
-      </nav>
+  <main id="top">
+    <section class="shell hero" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Dennis Wijers</p>
+        <h1 id="page-title">Build what matters.</h1>
+      </div>
+      <div class="hero-copy">
+        <h2>Technical program leadership for complex, consequential systems.</h2>
+        <p>I work across applied AI, cloud, cybersecurity, space systems, and secure infrastructure—turning ambitious ideas into executable programs and fielded capability.</p>
+        <div class="actions" aria-label="Professional links">
+          <a class="button primary" href="https://www.linkedin.com/in/denniswijers/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a class="button" href="Dennis_Wijers_Resume.pdf" target="_blank" rel="noopener">Résumé <span aria-hidden="true">↓</span></a>
+          <a class="button" href="https://github.com/DWijers" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section" id="work" aria-labelledby="work-heading">
+      <p class="section-label">01 / The work</p>
+      <div>
+        <h2 class="section-intro" id="work-heading">I lead at the intersection of emerging technology, secure operations, and real-world delivery.</h2>
+        <div class="work-grid">
+          <article class="work-item"><span class="work-number">01</span><h3>Applied AI</h3><p>Agentic workflows and AI-assisted operating systems that make program planning, testing, and execution faster and more useful.</p></article>
+          <article class="work-item"><span class="work-number">02</span><h3>Cloud &amp; security</h3><p>Secure infrastructure, privileged access, sovereign environments, and resilient operations across AWS and Azure.</p></article>
+          <article class="work-item"><span class="work-number">03</span><h3>Space systems</h3><p>Satellite communications, mission operations, ground architecture, data integration, and operational readiness.</p></article>
+          <article class="work-item"><span class="work-number">04</span><h3>Program leadership</h3><p>Clear requirements, integrated roadmaps, cross-functional execution, and accountable delivery in complex environments.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section" aria-labelledby="impact-heading">
+      <p class="section-label">02 / Selected impact</p>
+      <div>
+        <h2 class="section-intro" id="impact-heading">A career built around scale, clarity, and measurable outcomes.</h2>
+        <div class="impact-grid">
+          <div class="impact"><strong>3×</strong><span>Productivity from AI-assisted program workflows</span></div>
+          <div class="impact"><strong>1,200</strong><span>Cloud service dependencies prioritized for sovereign delivery</span></div>
+          <div class="impact"><strong>$20M</strong><span>Revenue generated through AI and quantum capture strategy</span></div>
+          <div class="impact"><strong>80+</strong><span>National-security programs served by a satellite data portfolio</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section" id="background" aria-labelledby="background-heading">
+      <p class="section-label">03 / Background</p>
+      <div>
+        <h2 class="section-intro" id="background-heading">Experience spanning industry, defense, intelligence, and mission operations.</h2>
+        <div class="background">
+          <article class="role"><h3>Amazon</h3><p>SATCOM field operations and secure cloud infrastructure.</p></article>
+          <article class="role"><h3>Microsoft</h3><p>Autonomous AI, quantum strategy, and sovereign cloud products.</p></article>
+          <article class="role"><h3>NRO &amp; U.S. Air Force</h3><p>Satellite data, GPS acquisition, nuclear detection, and strategic operations.</p></article>
+          <article class="role"><h3>SAIC</h3><p>Next-generation satellite ground architecture and cloud modernization.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section" aria-labelledby="approach-heading">
+      <p class="section-label">04 / How I work</p>
+      <div class="about-panel">
+        <blockquote id="approach-heading">Make the complex legible. Build the operating system. Deliver the mission.</blockquote>
+        <p>I translate technical ambition into a shared plan teams can execute. I use AI where it creates real leverage, while keeping security, rigor, and human accountability at the center.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell footer" id="connect">
+    <div>
+      <p class="eyebrow">Let’s connect</p>
+      <h2>Start a conversation.</h2>
+      <a class="footer-email" href="mailto:hello@denniswijers.com">hello@denniswijers.com</a>
     </div>
-
-    <section class="hero">
-      <div class="kicker">space systems • sovereign infrastructure • government scale</div>
-      <h1>Space Systems Leadership for Government and Regulated Markets</h1>
-
-      <p class="thesis">
-        <b>Operating thesis:</b> The next durable advantage in <b>Low Earth Orbit (LEO)</b> will be defined by compute placement and data movement,
-        not connectivity alone. Downlink economics, power and thermal constraints, and classification boundaries will drive where inference runs and
-        how space and terrestrial cloud stacks are designed together.
-      </p>
-
-      <p class="sub">
-        I lead programs that take space and cloud capabilities from technical proof to fielded deployment in defense and sovereign environments.
-        My background spans real-time satellite data systems at the National Reconnaissance Office, portfolio roles in the GPS enterprise,
-        sovereign cloud delivery at Microsoft and AWS, and government operational readiness for Amazon <b>Leo</b> deployments.
-      </p>
-
-      <div class="cta">
-        <a class="btn primary" href="Dennis_Wijers_Resume.pdf" target="_blank" rel="noopener">
-          Download resume (PDF)
-        </a>
-        <a class="btn" href="mailto:dennis.wijers86@gmail.com">
-          Email
-        </a>
-        <a class="btn" href="https://www.linkedin.com/in/denniswijers/" target="_blank" rel="noopener">
-          LinkedIn
-        </a>
-      </div>
-    </section>
-
-    <section class="grid">
-      <div class="card" id="focus">
-        <h2>What I run</h2>
-        <ul>
-          <li>Government scaling for space infrastructure: moving from prototype to deployable program inside DoD, IC, and sovereign environments</li>
-          <li>Mission integration: aligning product, engineering, ops, security, and customer stakeholders against delivery timelines and accreditation boundaries</li>
-          <li>Architecture decisions under constraint: bandwidth, latency, power, thermal envelopes, and cross-domain segmentation</li>
-          <li>Operating models for constellations: field readiness, lifecycle support, and repeatable deployment patterns</li>
-          <li>Government go-to-market: shaping requirements, building the adoption path, and aligning partners in regulated markets</li>
-        </ul>
-
-        <div class="pillrow" aria-label="Tags">
-          <span class="pill">VP Gov / Head of Federal</span>
-          <span class="pill">Mission integration</span>
-          <span class="pill">Low Earth Orbit (LEO)</span>
-          <span class="pill">Sovereign cloud</span>
-          <span class="pill">Cross-domain constraints</span>
-        </div>
-      </div>
-
-      <div class="card" id="roles">
-        <h2>Recent roles</h2>
-        <p><b>Amazon</b> — SATCOM Field Operations Manager, Amazon <b>Leo</b> for Government (2025–Present)</p>
-        <p><b>AWS</b> — Senior Technical Program Manager, Foundational Security Services (2025)</p>
-        <p><b>Microsoft</b> — Director, Strategic Ventures; Senior Product Manager (2021–2025)</p>
-        <p><b>SAIC</b> — System Engineer Principal, OPIR Architecture (2020–2021)</p>
-        <p><b>U.S. Air Force</b> — Captain, acquisition and ops (2010–2020)</p>
-
-        <div class="note">
-          Background includes NRO real-time satellite dissemination, sovereign cloud Authorization to Operate delivery, and operational readiness for Amazon Leo government deployments.
-        </div>
-      </div>
-    </section>
-
-    <section class="card" id="thesis2" style="margin-top:16px;">
-      <h2>Orbital compute and AI infrastructure</h2>
-      <p>
-        Orbital compute changes system design. It reshapes ground architecture, tasking models, security boundaries, and cost structure.
-        When downlink is constrained, moving inference closer to collection becomes an architecture decision rather than an optimization.
-      </p>
-      <p>
-        I am focused on companies building satellite constellations with integrated data pipelines, orbital edge compute platforms,
-        and space-to-cloud systems where compute placement is part of the product. I am most useful where success requires both technical
-        system decisions and the ability to field capability inside defense and sovereign markets.
-      </p>
-    </section>
-
-    <section class="card" id="contact" style="margin-top:16px;">
-      <h2>Contact</h2>
-      <p>
-        Email: <a href="mailto:dennis.wijers86@gmail.com">dennis.wijers86@gmail.com</a>
-      </p>
-      <p>
-        LinkedIn: <a href="https://www.linkedin.com/in/denniswijers/" target="_blank" rel="noopener">linkedin.com/in/denniswijers</a>
-      </p>
-      <p class="foot">
-        Built on GitHub Pages. Simple, fast, and clean.
-      </p>
-    </section>
-  </div>
+    <p class="footer-meta">Dennis Wijers · 2026</p>
+  </footer>
 </body>
 </html>
