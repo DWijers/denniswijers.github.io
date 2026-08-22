@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Dennis Wijers.">
+  <meta name="theme-color" content="#f4f2ed">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://denniswijers.com/contact">
+  <meta property="og:title" content="Contact Dennis Wijers">
+  <meta property="og:description" content="Contact Dennis Wijers.">
+  <meta property="og:image" content="https://denniswijers.com/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://denniswijers.com/contact">
+  <title>Contact Dennis Wijers</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --background: #f4f2ed;
+      --surface: #eeece6;
+      --text: #1e1e1b;
+      --muted: #5f5e58;
+      --line: #cbc8bf;
+      --focus: #245a87;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { min-width: 320px; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .shell {
+      width: min(calc(100% - 48px), 1080px);
+      margin: 0 auto;
+    }
+
+    header {
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      font-size: 17px;
+      font-weight: 750;
+      letter-spacing: -0.025em;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 14px;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    nav a:hover,
+    .direct-email:hover {
+      color: var(--text);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+      gap: clamp(64px, 9vw, 128px);
+      padding-top: clamp(72px, 10vw, 128px);
+      padding-bottom: clamp(72px, 10vw, 128px);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(44px, 6vw, 68px);
+      font-weight: 650;
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    .direct-email {
+      display: inline-block;
+      margin-top: 30px;
+      border-bottom: 1px solid var(--line);
+      font-size: 16px;
+      font-weight: 650;
+      line-height: 2;
+      text-decoration: none;
+    }
+
+    form {
+      display: grid;
+      gap: 24px;
+    }
+
+    .field {
+      display: grid;
+      gap: 9px;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.42);
+      color: var(--text);
+      font: inherit;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    input { min-height: 52px; padding: 12px 14px; }
+
+    textarea {
+      min-height: 176px;
+      padding: 13px 14px;
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder { color: #77756e; }
+
+    button {
+      justify-self: start;
+      min-height: 48px;
+      padding: 0 20px;
+      border: 1px solid var(--text);
+      border-radius: 4px;
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      font: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      transition: background-color 150ms ease, color 150ms ease;
+    }
+
+    button:hover {
+      background: var(--text);
+      color: var(--background);
+    }
+
+    .form-note {
+      min-height: 20px;
+      margin: -8px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .form-note[data-state="error"] { color: #8a2f2f; }
+
+    .form-honeypot {
+      display: none;
+    }
+
+    button:disabled {
+      cursor: wait;
+      opacity: 0.62;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 4px;
+    }
+
+    input:focus-visible,
+    textarea:focus-visible { outline-offset: 1px; }
+
+    @media (max-width: 760px) {
+      .shell { width: min(calc(100% - 36px), 1080px); }
+
+      header { min-height: 72px; }
+
+      nav { gap: 18px; }
+
+      main {
+        grid-template-columns: 1fr;
+        gap: 56px;
+        padding-top: 64px;
+      }
+    }
+
+    @media (max-width: 460px) {
+      nav a:first-child { display: none; }
+      h1 { font-size: 44px; }
+      button { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      button { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <a class="brand" href="/">Dennis Wijers</a>
+    <nav aria-label="Primary navigation">
+      <a href="/about">About my work</a>
+      <a href="https://www.linkedin.com/in/denniswijers/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <div class="intro">
+      <h1>Contact me</h1>
+      <a class="direct-email" href="mailto:hello@denniswijers.com">hello@denniswijers.com</a>
+    </div>
+
+    <form id="contact-form" action="https://formspree.io/f/mdenjjdo" method="post">
+      <input type="hidden" name="_subject" value="New message from denniswijers.com">
+
+      <input class="form-honeypot" name="_gotcha" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" maxlength="100" required>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" maxlength="254" required>
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="What would you like to discuss?" maxlength="5000" required></textarea>
+      </div>
+
+      <button type="submit">Send message</button>
+      <p class="form-note" id="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <script>
+    const form = document.querySelector("#contact-form");
+
+    const submitButton = form.querySelector("button[type='submit']");
+    const status = document.querySelector("#form-status");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+      status.textContent = "";
+      status.removeAttribute("data-state");
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" }
+        });
+
+        if (!response.ok) {
+          throw new Error("Submission failed");
+        }
+
+        form.reset();
+        status.textContent = "Thanks. Your message has been sent.";
+      } catch {
+        status.dataset.state = "error";
+        status.textContent = "The message could not be sent. Please email me directly.";
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "Send message";
+      }
+    });
+  </script>
+</body>
+</html>
