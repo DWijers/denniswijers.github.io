@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dennis Wijers helps complex technology become useful, trusted, and operational across space, national security, secure cloud, AI, and satellite connectivity.">
+  <meta name="theme-color" content="#f7f8fa">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://denniswijers.com/about">
+  <meta property="og:title" content="Dennis Wijers | Technology and program leadership">
+  <meta property="og:description" content="A career spent turning complex technology into systems people can trust and use.">
+  <meta property="og:image" content="https://denniswijers.com/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://denniswijers.com/about">
+  <title>Dennis Wijers | Technology and program leadership</title>
+  <style>
+    :root {
+      --ink: #172438;
+      --ink-2: #314158;
+      --muted: #65758b;
+      --blue: #215e9c;
+      --blue-soft: #eaf2fa;
+      --paper: #f7f8fa;
+      --white: #ffffff;
+      --line: #dce2e8;
+      --max: 1160px;
+      --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); line-height: 1.62; -webkit-font-smoothing: antialiased; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid #6ba4d8; outline-offset: 4px; }
+    .shell { width: min(calc(100% - 44px), var(--max)); margin-inline: auto; }
+    .kicker { margin: 0 0 16px; color: var(--blue); font-size: 12px; font-weight: 750; letter-spacing: .11em; text-transform: uppercase; }
+    .topbar { height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 28px; border-bottom: 1px solid var(--line); }
+    .brand { font-size: 17px; font-weight: 780; letter-spacing: -.025em; text-decoration: none; }
+    nav { display: flex; align-items: center; gap: 26px; font-size: 13px; }
+    nav a { color: var(--ink-2); text-decoration: none; }
+    nav a:hover { color: var(--blue); }
+    .location { color: var(--muted); font-size: 12px; }
+
+    .hero { padding: 104px 0 96px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.32fr) minmax(300px, .68fr); gap: clamp(50px, 8vw, 112px); align-items: end; }
+    h1 { margin: 0; max-width: 830px; font-size: clamp(40px, 5.2vw, 60px); line-height: 1.08; letter-spacing: -.048em; font-weight: 720; }
+    .hero-side { padding-bottom: 7px; }
+    .hero-side p { margin: 0 0 14px; color: var(--ink-2); font-size: 18px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .button { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; padding: 11px 17px; border: 1px solid var(--ink); color: var(--ink); font-size: 13px; font-weight: 750; text-decoration: none; transition: .16s ease; }
+    .button.primary { color: var(--white); background: var(--ink); }
+    .button:hover { transform: translateY(-1px); border-color: var(--blue); color: var(--blue); }
+    .button.primary:hover { color: var(--white); background: var(--blue); }
+
+    .leo-feature { margin-bottom: 32px; background: var(--white); border: 1px solid var(--line); }
+    .leo-feature img { width: 100%; aspect-ratio: 16 / 7.6; object-fit: cover; object-position: center 52%; }
+    .image-caption { display: flex; justify-content: space-between; gap: 24px; padding: 14px 18px; color: var(--muted); font-size: 11px; }
+    .image-caption a { color: var(--blue); }
+
+    section { padding: 94px 0; border-top: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; margin-bottom: 52px; }
+    .section-head h2 { margin: 0; max-width: 790px; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.13; letter-spacing: -.041em; font-weight: 680; }
+    .section-head .intro { margin: 20px 0 0; max-width: 720px; color: var(--ink-2); font-size: 18px; }
+
+    .direction { display: grid; grid-template-columns: 1.25fr .75fr; gap: 70px; align-items: start; }
+    .direction-statement { margin: 0; font-size: clamp(24px, 2.7vw, 32px); line-height: 1.28; letter-spacing: -.03em; }
+    .direction-points { display: grid; gap: 24px; }
+    .direction-point { padding-top: 18px; border-top: 1px solid var(--line); }
+    .direction-point h3 { margin: 0 0 6px; font-size: 17px; letter-spacing: -.02em; }
+    .direction-point p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .story-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 72px; align-items: start; }
+    .story-lead { margin: 0; font-size: clamp(25px, 2.8vw, 34px); line-height: 1.26; letter-spacing: -.034em; }
+    .story-copy { display: grid; gap: 22px; }
+    .story-copy p { margin: 0; color: var(--ink-2); font-size: 17px; }
+    .story-rule { padding-top: 21px; border-top: 1px solid var(--line); }
+    .story-rule strong { display: block; margin-bottom: 6px; color: var(--blue); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+
+    .current-work { display: grid; grid-template-columns: .93fr 1.07fr; gap: 54px; align-items: center; }
+    .current-work img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+    .current-copy h2 { margin: 0 0 18px; font-size: clamp(30px, 3.5vw, 42px); line-height: 1.14; letter-spacing: -.04em; }
+    .current-copy p { margin: 0 0 17px; color: var(--ink-2); }
+    .current-copy .note { padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+
+    .mission-list { display: grid; }
+    .mission { display: grid; grid-template-columns: 155px minmax(0, 1fr); gap: 44px; padding: 40px 0; border-top: 1px solid var(--line); }
+    .mission:last-child { border-bottom: 1px solid var(--line); }
+    .mission-meta { color: var(--muted); font-size: 12px; }
+    .mission-meta strong { display: block; margin-bottom: 5px; color: var(--blue); font-size: 13px; }
+    .mission-body h3 { margin: 0 0 16px; font-size: clamp(23px, 2.5vw, 31px); line-height: 1.2; letter-spacing: -.032em; }
+    .mission-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; }
+    .mission-columns p { margin: 0; color: var(--ink-2); font-size: 15px; }
+    .mission-columns strong { color: var(--ink); }
+    .mission-outcome { margin: 24px 0 0; padding-top: 20px; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 15px; }
+    .mission-media { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; padding: 12px 0 40px; }
+    .mission-photo { margin: 0; background: var(--white); border: 1px solid var(--line); }
+    .mission-photo img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+    .mission-photo figcaption { padding: 13px 16px 15px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+    .mission-photo a { color: var(--blue); text-underline-offset: 3px; }
+    .context-label { display: block; margin-bottom: 8px; color: var(--blue); font-size: 11px; font-weight: 760; letter-spacing: .08em; text-transform: uppercase; }
+
+    .logo-band { padding: 44px 0; }
+    .logo-band > p { margin-bottom: 24px; }
+    .logos { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+    .logo { min-height: 104px; display: flex; align-items: center; justify-content: center; padding: 22px; background: var(--white); border: 1px solid var(--line); }
+    .logo img { max-width: 125px; max-height: 55px; object-fit: contain; }
+    .logo.seal img { max-height: 68px; }
+
+    .timeline { display: grid; }
+    .timeline-entry { display: grid; grid-template-columns: 220px 24px minmax(0, 1fr); gap: 24px; padding-bottom: 42px; }
+    .timeline-entry:last-child { padding-bottom: 0; }
+    .timeline-years { padding-top: 4px; color: var(--blue); font-size: 11px; font-weight: 760; letter-spacing: .08em; text-transform: uppercase; }
+    .timeline-marker { position: relative; min-height: 100%; }
+    .timeline-marker::before { content: ""; position: absolute; top: 12px; bottom: -42px; left: 50%; width: 1px; background: var(--line); transform: translateX(-50%); }
+    .timeline-marker::after { content: ""; position: absolute; top: 7px; left: 50%; width: 11px; height: 11px; border: 2px solid var(--blue); border-radius: 50%; background: var(--paper); transform: translateX(-50%); }
+    .timeline-entry:last-child .timeline-marker::before { display: none; }
+    .timeline-content { padding: 0 0 34px; border-bottom: 1px solid var(--line); }
+    .timeline-entry:last-child .timeline-content { padding-bottom: 0; border-bottom: 0; }
+    .timeline-content h3 { margin: 0 0 4px; font-size: 27px; line-height: 1.2; letter-spacing: -.035em; }
+    .timeline-content h4 { margin: 0 0 10px; color: var(--ink-2); font-size: 15px; font-weight: 650; }
+    .timeline-content p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    details { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    summary { padding: 18px 0; cursor: pointer; color: var(--ink-2); font-size: 13px; font-weight: 700; }
+    .sources { columns: 2; column-gap: 50px; margin: 0 0 24px; padding-left: 20px; color: var(--muted); font-size: 12px; }
+    .sources li { break-inside: avoid; margin-bottom: 9px; }
+    .sources a { color: var(--blue); text-underline-offset: 3px; }
+    .disclaimer { color: var(--muted); font-size: 11px; }
+
+    footer { padding: 84px 0 42px; border-top: 1px solid var(--line); }
+    .footer-grid { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; }
+    footer h2 { margin: 0 0 20px; max-width: 680px; font-size: clamp(31px, 4vw, 48px); line-height: 1.1; letter-spacing: -.045em; }
+    footer .kicker { font-size: 14px; }
+    .contact-intro { margin: 0 0 24px; max-width: 720px; color: var(--ink-2); font-size: 18px; }
+    .email { display: inline-block; color: var(--blue); font-size: 18px; font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: 6px; }
+    .footer-meta { color: var(--muted); font-size: 11px; text-align: right; }
+
+    @media (max-width: 880px) {
+      .location { display: none; }
+      .hero-grid, .section-head, .direction, .story-grid, .current-work { grid-template-columns: 1fr; }
+      .hero-grid { gap: 38px; }
+      .section-head { gap: 10px; }
+      .direction { gap: 46px; }
+      .current-work { gap: 34px; }
+      .logos { grid-template-columns: repeat(2, 1fr); }
+      .timeline-entry { grid-template-columns: 140px 24px minmax(0, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .shell { width: min(calc(100% - 28px), var(--max)); }
+      nav a:not(:last-child) { display: none; }
+      .hero { padding: 76px 0 64px; }
+      h1 { font-size: clamp(38px, 11vw, 48px); }
+      section { padding: 70px 0; }
+      .image-caption { display: block; }
+      .mission { grid-template-columns: 1fr; gap: 12px; }
+      .mission-columns { grid-template-columns: 1fr; gap: 22px; }
+      .mission-media { grid-template-columns: 1fr; }
+      .timeline-entry { grid-template-columns: 18px minmax(0, 1fr); gap: 0 16px; padding-bottom: 36px; }
+      .timeline-years { grid-column: 2; grid-row: 1; padding-top: 0; margin-bottom: 7px; }
+      .timeline-marker { grid-column: 1; grid-row: 1 / span 2; }
+      .timeline-marker::before { bottom: -36px; }
+      .timeline-content { grid-column: 2; grid-row: 2; padding-bottom: 30px; }
+      .logos { grid-template-columns: 1fr 1fr; }
+      .sources { columns: 1; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-meta { text-align: left; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <header class="shell topbar">
+    <a class="brand" href="#top">Dennis Wijers</a>
+    <nav aria-label="Primary navigation">
+      <a href="#story">Story</a><a href="#work">Work</a><a href="#direction">Direction</a><a href="#experience">Experience</a><a href="/Dennis-Wijers-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a><a href="https://www.linkedin.com/in/denniswijers/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="#contact">Contact</a>
+    </nav>
+    <span class="location">Fairfax, Virginia</span>
+  </header>
+
+  <main id="top">
+    <div class="shell hero">
+      <div class="hero-grid">
+        <div><p class="kicker">Space, technology, and public mission</p><h1>I lead complex technology programs across space, national security, cloud, and AI.</h1></div>
+        <div class="hero-side"><p>My career began as an Air Force missile officer, responsible for systems where discipline and reliability were non-negotiable.</p><p>Since then, I have moved from government missions into secure cloud, AI strategy, and commercial satellite connectivity.</p><div class="actions"><a class="button" href="/Dennis-Wijers-Resume.pdf" target="_blank" rel="noopener noreferrer">View resume</a></div></div>
+      </div>
+    </div>
+
+    <section id="story">
+      <div class="shell">
+        <div class="section-head"><p class="kicker">How I work</p><div><h2>I help teams make clear decisions and carry complex programs through delivery.</h2></div></div>
+        <div class="story-grid">
+          <p class="story-lead">Most of my work involves teams with different priorities. I help them agree on what matters, make the decisions, and deliver the program.</p>
+          <div class="story-copy">
+            <p>Across different missions, I have been responsible for turning technical and organizational complexity into decisions, plans, and operating systems that teams can execute. That requires clear ownership, visible tradeoffs, and a shared understanding of the mission.</p>
+            <div class="story-rule"><strong>My approach</strong><p>I start with mission requirements, align decision-makers, establish ownership and priorities, and stay engaged through deployment and operation.</p></div>
+            <div class="story-rule"><strong>The work</strong><p>My work has included program strategy, security frameworks, cross-domain data platforms, prioritization models, technical roadmaps, and operating processes.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell current-work">
+        <img src="/assets/images/amazon-leo-ultra.png" alt="Amazon Leo Ultra enterprise satellite antenna">
+        <div class="current-copy"><p class="kicker">Current chapter</p><h2>Amazon Leo Government</h2><p>Amazon Leo is building a low-Earth-orbit satellite network for fast, reliable connectivity beyond the reach of existing infrastructure. My work focuses on the government field-operations side: designing the support-platform architecture, connecting systems and identity layers, and leading engineering teams through a complex operational build.</p><p>The opportunity is larger than connectivity alone. Satellite networks, cloud infrastructure, secure data movement, and field support have to function as one service for demanding public-sector customers.</p><p class="note">Program imagery and public context are from Amazon’s November 2025 enterprise announcement. Personal responsibilities are based on my resume and do not represent an official Amazon statement. <a href="https://www.aboutamazon.com/news/amazon-leo/amazon-leo-satellite-internet-ultra-pro">Amazon source ↗</a></p></div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="shell">
+        <div class="section-head"><p class="kicker">Selected work</p><div><h2>Four parts of my career that explain the work I do today.</h2><p class="intro">These examples show how my responsibilities grew from operating mission systems to leading programs across government and industry.</p></div></div>
+        <div class="mission-list">
+          <article class="mission"><div class="mission-meta"><strong>Operations</strong>2010 to 2014</div><div class="mission-body"><h3>I began my career as a Minuteman III missile officer.</h3><div class="mission-columns"><p><span class="context-label">The role</span>As a Minuteman III crew commander and assistant flight commander, I was responsible for readiness, exact execution, and accountable decisions in a nuclear command-and-control mission.</p><p><span class="context-label">Leadership foundation</span>I still bring that operating discipline to complex programs: understand the full system, identify risk early, make clear decisions, and maintain focus on operational readiness.</p></div></div></article>
+          <article class="mission"><div class="mission-meta"><strong>Mission systems</strong>2014 to 2017</div><div class="mission-body"><h3>I then led programs in nuclear detection and GPS acquisition.</h3><div class="mission-columns"><p><span class="context-label">Nuclear detection</span>I led a <strong>$20M-per-year ground-system program</strong> supporting the United States Nuclear Detonation Detection System across nine global sites. The mission joins space-based sensing with ground processing and the specialized expertise of Sandia and Los Alamos.</p><p><span class="context-label">GPS acquisition</span>On the GPS Program Executive Officer staff, I supported governance of a <strong>$32B portfolio</strong>. The work turned funding, schedule, cybersecurity, and technical risk into decisions that could sustain positioning, navigation, and timing capabilities for military and civil users.</p></div></div></article>
+          <div id="mission-imagery" class="mission-media" aria-label="Mission imagery">
+            <figure class="mission-photo"><img src="/assets/images/minuteman-iii-test-launch.jpg" width="1000" height="667" loading="lazy" alt="Nighttime trajectory of an unarmed Minuteman III test launch"><figcaption>Unarmed Minuteman III operational test launch, Vandenberg Space Force Base, 2021. U.S. Space Force photo by Michael Peterson. <a href="https://www.dvidshub.net/image/6777470/minuteman-iii-launch">Source</a></figcaption></figure>
+            <figure class="mission-photo"><img src="/assets/images/gps-iii-satellite.jpg" width="755" height="507" loading="lazy" alt="GPS III satellite in orbit above Earth"><figcaption>GPS III satellite in orbit. U.S. Air Force courtesy graphic. <a href="https://www.af.mil/News/Photos/igphoto/2002075645/mediaid/3118254/">Source</a></figcaption></figure>
+          </div>
+          <article class="mission"><div class="mission-meta"><strong>RTS and OPIR</strong>2017 to 2021</div><div class="mission-body"><h3>I led the team that made Real-Time Transfer Service operational across the OPIR enterprise.</h3><div class="mission-columns"><p><span class="context-label">Why RTS mattered</span>Before I arrived at the NRO, the 2015 DoD Space Science and Technology Strategy placed RTS in its roadmap for an open-architecture missile-warning ground system and separately set a goal of real-time dissemination from national assets to tactical units. A 2026 GAO report describes RTS as the service that lets OPIR weapon systems publish data in standard message formats that users access by subscription.</p><p><span class="context-label">My contribution</span>I led the <strong>55-person joint team</strong> responsible for developing, operating, securing, and sustaining a <strong>$50M+ real-time satellite-data portfolio</strong> serving more than 80 DoD and Intelligence Community programs. We integrated 15 non-traditional feeds, increased mission data available to users by 38%, expanded access to 15 additional organizations, and improved availability from 99% to 99.99%.</p></div><p class="mission-outcome"><span class="context-label">Delivery and expansion</span>I also delivered a <strong>$10M cross-domain dissemination platform</strong> that doubled global customer access, then secured and executed a <strong>$26M follow-on</strong> to establish the mission's first cloud-enabled secure dissemination capability.</p></div></article>
+          <article class="mission"><div class="mission-meta"><strong>Commercial technology</strong>2021 to present</div><div class="mission-body"><h3>My work at Microsoft and Amazon has covered secure cloud, AI, emerging technology, and satellite operations.</h3><div class="mission-columns"><p><span class="context-label">Microsoft</span>I worked first on secure cloud operations, helping services reach government authorization and building repeatable mechanisms for planning, prioritization, and accountability. Later, in Strategic Ventures, I created a due-diligence and scoring model used to assess <strong>20 emerging-technology opportunities</strong> and supported strategic research across AI and quantum.</p><p><span class="context-label">Amazon</span>At AWS, I helped scale just-in-time privileged access across <strong>14 fleets and more than 200 services</strong>. Today, at Amazon Leo Government, I am applying the same systems view to support architecture, integration, identity, and field operations for a new satellite network.</p></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="direction">
+      <div class="shell">
+        <div class="section-head"><p class="kicker">Professional direction</p><div><h2>What I want to do next.</h2></div></div>
+        <div class="direction">
+          <p class="direction-statement">I am pursuing director or executive leadership roles where I can launch new technology efforts and own the path from strategy through operational adoption.</p>
+          <div class="direction-points">
+            <div class="direction-point"><h3>Launch and scale new programs</h3><p>Define the strategy, build the operating structure, establish priorities, and deliver usable capability.</p></div>
+            <div class="direction-point"><h3>Lead across organizations</h3><p>Align engineers, operators, security teams, business leaders, and government customers around decisions and execution.</p></div>
+            <div class="direction-point"><h3>Work on consequential technology</h3><p>Focus on space, AI, secure infrastructure, resilient connectivity, and other fields where reliability and public value matter.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="shell logo-band" aria-label="Organizations in Dennis Wijers's career">
+      <p class="kicker">Organizations that shaped the work</p>
+      <div class="logos"><div class="logo"><img src="/assets/logos/amazon.svg" alt="Amazon"></div><div class="logo"><img src="/assets/logos/microsoft.svg" alt="Microsoft"></div><div class="logo"><img src="/assets/logos/saic.svg" alt="SAIC"></div><div class="logo"><img src="/assets/logos/usaf.svg" alt="United States Air Force"></div><div class="logo seal"><img src="/assets/logos/nro.svg" alt="National Reconnaissance Office"></div></div>
+    </div>
+
+    <section id="experience">
+      <div class="shell"><div class="section-head"><p class="kicker">Career timeline</p><div><h2>From the Air Force to commercial technology.</h2></div></div>
+        <div class="timeline">
+          <article class="timeline-entry"><span class="timeline-years">2025 to present</span><div class="timeline-marker" aria-hidden="true"></div><div class="timeline-content"><h3>Amazon</h3><h4>Senior Technical Program Manager</h4><p>Amazon Leo Government · AWS Foundational Security</p></div></article>
+          <article class="timeline-entry"><span class="timeline-years">2021 to 2025</span><div class="timeline-marker" aria-hidden="true"></div><div class="timeline-content"><h3>Microsoft</h3><h4>Director, Strategic Ventures · Senior Product Manager, Microsoft 365</h4><p>Emerging technology strategy · Sovereign cloud delivery</p></div></article>
+          <article class="timeline-entry"><span class="timeline-years">2020 to 2021</span><div class="timeline-marker" aria-hidden="true"></div><div class="timeline-content"><h3>SAIC</h3><h4>System Engineer Principal</h4><p>Overhead Persistent Infrared architecture</p></div></article>
+          <article class="timeline-entry"><span class="timeline-years">2010 to 2020</span><div class="timeline-marker" aria-hidden="true"></div><div class="timeline-content"><h3>U.S. Air Force</h3><h4>Program Manager · Acquisition Leader · Missile Officer</h4><p>NRO · GPS · Nuclear detection · Global Strike Command</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section><div class="shell"><details><summary>Public sources and context</summary><ol class="sources"><li><a href="https://www.aboutamazon.com/news/amazon-leo/amazon-leo-plans-double-launch-rate-20-missions">Amazon Leo production and launch update, March 2026</a></li><li><a href="https://www.aboutamazon.com/news/amazon-leo/amazon-leo-satellite-internet-ultra-pro">Amazon Leo enterprise and Ultra announcement, November 2025</a></li><li><a href="https://defenseinnovationmarketplace.dtic.mil/wp-content/uploads/2018/02/2015_DoD_Space_ST_Strategy_FINAL.pdf">2015 DoD Space Science and Technology Strategy</a></li><li><a href="https://www.gao.gov/assets/gao-26-107085.pdf">GAO missile warning satellites report, 2026</a></li><li><a href="https://www.ssc.spaceforce.mil/About-Us/Fact-Sheets/Indextitle/G">SSC fact sheets: GPS III and OCX</a></li><li><a href="https://www.sandia.gov/space/our-mission/">Sandia nuclear detonation detection mission</a></li><li><a href="https://cdn.lanl.gov/spring-2022-online_e09f3.pdf">Los Alamos space-based nuclear detection overview</a></li><li><a href="https://www.nro.gov/About-NRO/Mission-Partners-and-Customers/">NRO mission partners and customers</a></li><li><a href="https://www.nga.mil/news/NGA_USSF_Sign_TacSRT_Agreenment.html">NGA-U.S. Space Force partnership</a></li></ol></details><p class="disclaimer">Public mission context is drawn from unclassified sources. Personal contributions and figures are based on Dennis Wijers’s resume. Organization names and marks identify employment or mission context only and do not imply endorsement.</p></div></section>
+  </main>
+
+  <footer id="contact"><div class="shell footer-grid"><div><p class="kicker">Contact</p><h2>I am looking for director and executive roles where I can lead new efforts in space, AI, cloud, or national security technology.</h2><p class="contact-intro">If you are building a new program, product, or organization in one of these areas, please contact me.</p><a class="email" href="mailto:hello@denniswijers.com">Contact me at hello@denniswijers.com ↗</a></div><div class="footer-meta"><p><a href="https://www.linkedin.com/in/denniswijers/" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="https://github.com/DWijers">GitHub</a> · <a href="/Dennis-Wijers-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></p><p>Fairfax, Virginia · © 2026</p></div></div></footer>
+</body>
+</html>

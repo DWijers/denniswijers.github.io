@@ -3,381 +3,126 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Dennis Wijers leads technical programs across space systems, secure cloud, cybersecurity, and government technology.">
-  <meta name="theme-color" content="#f5f3ee">
+  <meta name="description" content="Dennis Wijers is a technology and program leader working across space, AI, cloud, and national security.">
+  <meta name="theme-color" content="#f4f2ed">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://denniswijers.com/">
-  <meta property="og:title" content="Dennis Wijers | Space, cloud, and technical programs">
-  <meta property="og:description" content="Technical program leadership across commercial space, secure cloud, and national-security missions.">
+  <meta property="og:title" content="Dennis Wijers">
+  <meta property="og:description" content="Technology and program leader working across space, AI, cloud, and national security.">
   <meta property="og:image" content="https://denniswijers.com/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://denniswijers.com/">
-  <title>Dennis Wijers | Space, cloud, and technical programs</title>
+  <title>Dennis Wijers</title>
   <style>
     :root {
-      --ink: #182330;
-      --ink-soft: #344351;
-      --muted: #687580;
-      --accent: #2e6870;
-      --accent-soft: #e3eeee;
-      --paper: #f5f3ee;
-      --white: #ffffff;
-      --line: #d9ddd9;
-      --max: 1080px;
-      --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color-scheme: light;
+      --background: #f4f2ed;
+      --text: #1e1e1b;
+      --muted: #5f5e58;
+      --line: #cbc8bf;
+      --focus: #245a87;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
+    html { min-width: 320px; }
+
     body {
+      min-height: 100vh;
       margin: 0;
-      color: var(--ink);
-      background: var(--paper);
-      font-family: var(--sans);
-      line-height: 1.65;
+      background: var(--background);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       -webkit-font-smoothing: antialiased;
     }
-    img { display: block; max-width: 100%; }
-    a { color: inherit; }
-    a:focus-visible { outline: 3px solid #75aab0; outline-offset: 4px; }
-    .shell { width: min(calc(100% - 44px), var(--max)); margin-inline: auto; }
-    .eyebrow {
-      margin: 0 0 14px;
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 760;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
 
-    .topbar {
-      min-height: 74px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-      border-bottom: 1px solid var(--line);
-    }
-    .brand { font-size: 17px; font-weight: 760; letter-spacing: -.02em; text-decoration: none; }
-    nav { display: flex; align-items: center; gap: 24px; font-size: 13px; }
-    nav a { color: var(--ink-soft); text-decoration: none; }
-    nav a:hover { color: var(--accent); }
-    .location { color: var(--muted); font-size: 12px; }
-
-    .hero { padding: 92px 0 78px; }
-    .hero-grid {
+    main {
+      min-height: 100vh;
       display: grid;
-      grid-template-columns: minmax(0, 1.18fr) minmax(290px, .82fr);
-      gap: clamp(48px, 8vw, 92px);
-      align-items: end;
+      align-items: center;
+      padding: clamp(48px, 9vw, 112px) clamp(24px, 7vw, 96px);
     }
+
+    .intro {
+      width: min(100%, 760px);
+    }
+
     h1 {
       margin: 0;
-      max-width: 720px;
-      font-size: clamp(44px, 6.4vw, 72px);
-      line-height: 1.03;
-      letter-spacing: -.052em;
-      font-weight: 700;
+      font-size: clamp(42px, 7vw, 72px);
+      font-weight: 650;
+      line-height: 1;
+      letter-spacing: -0.055em;
     }
-    .hero-copy p { margin: 0; color: var(--ink-soft); font-size: 19px; }
-    .hero-copy p + p { margin-top: 16px; }
-    .actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 28px; }
-    .button {
-      min-height: 45px;
+
+    p {
+      max-width: 650px;
+      margin: 30px 0 0;
+      color: var(--muted);
+      font-size: clamp(20px, 2.4vw, 28px);
+      line-height: 1.45;
+      letter-spacing: -0.022em;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 34px;
+      margin-top: clamp(46px, 7vw, 72px);
+    }
+
+    a {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      padding: 10px 17px;
-      border: 1px solid var(--ink);
-      color: var(--ink);
-      font-size: 13px;
-      font-weight: 720;
-      text-decoration: none;
-      transition: .16s ease;
-    }
-    .button.primary { color: var(--white); background: var(--ink); }
-    .button:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
-    .button.primary:hover { color: var(--white); background: var(--accent); }
-
-    section { padding: 78px 0; border-top: 1px solid var(--line); }
-    .section-heading {
-      display: grid;
-      grid-template-columns: 180px minmax(0, 1fr);
-      gap: 42px;
-      margin-bottom: 42px;
-    }
-    .section-heading h2 {
-      margin: 0;
-      max-width: 720px;
-      font-size: clamp(32px, 4.2vw, 48px);
-      line-height: 1.12;
-      letter-spacing: -.04em;
-      font-weight: 670;
-    }
-    .section-heading p { margin: 16px 0 0; max-width: 680px; color: var(--ink-soft); font-size: 17px; }
-
-    .current {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 52px;
-      align-items: center;
-    }
-    .current img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--white); }
-    .current-copy h2 {
-      margin: 0 0 18px;
-      font-size: clamp(32px, 4.3vw, 49px);
-      line-height: 1.1;
-      letter-spacing: -.042em;
-    }
-    .current-copy p { margin: 0 0 16px; color: var(--ink-soft); }
-    .source-note { padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted) !important; font-size: 12px; }
-    .source-note a { color: var(--accent); }
-
-    .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .work-card { min-height: 330px; padding: 25px; background: var(--white); border: 1px solid var(--line); }
-    .work-card .meta { color: var(--accent); font-size: 11px; font-weight: 760; letter-spacing: .08em; text-transform: uppercase; }
-    .work-card h3 { margin: 34px 0 14px; font-size: 24px; line-height: 1.2; letter-spacing: -.03em; }
-    .work-card p { margin: 0; color: var(--ink-soft); font-size: 14px; }
-    .work-card strong { color: var(--ink); }
-
-    .direction {
-      display: grid;
-      grid-template-columns: 1.06fr .94fr;
-      gap: 64px;
-      align-items: start;
-    }
-    .direction h2 {
-      margin: 0;
-      max-width: 610px;
-      font-size: clamp(33px, 4.5vw, 52px);
-      line-height: 1.12;
-      letter-spacing: -.043em;
-      font-weight: 670;
-    }
-    .direction-copy p { margin: 0 0 18px; color: var(--ink-soft); font-size: 17px; }
-    .interest-list { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 26px; }
-    .interest-list span { padding: 7px 11px; color: var(--accent); background: var(--accent-soft); font-size: 12px; font-weight: 700; }
-
-    .career-list { border-top: 1px solid var(--line); }
-    .career-row {
-      display: grid;
-      grid-template-columns: 150px 220px minmax(0, 1fr);
-      gap: 28px;
-      padding: 27px 0;
+      min-height: 44px;
       border-bottom: 1px solid var(--line);
+      color: var(--text);
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 150ms ease, color 150ms ease;
     }
-    .career-row .years { color: var(--muted); font-size: 12px; }
-    .career-row h3 { margin: 0; font-size: 20px; letter-spacing: -.025em; }
-    .career-row p { margin: 0; color: var(--ink-soft); font-size: 14px; }
 
-    .logo-band { padding: 40px 0; border-top: 1px solid var(--line); }
-    .logo-band .eyebrow { text-align: center; }
-    .logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 28px 44px; margin-top: 22px; }
-    .logo img { max-width: 105px; max-height: 42px; object-fit: contain; filter: grayscale(1); opacity: .65; }
-    .logo.seal img { max-height: 52px; }
-
-    details { border-top: 1px solid var(--line); }
-    summary { padding: 17px 0; cursor: pointer; color: var(--ink-soft); font-size: 13px; font-weight: 680; }
-    .sources { columns: 2; column-gap: 44px; margin: 0 0 22px; padding-left: 20px; color: var(--muted); font-size: 12px; }
-    .sources li { break-inside: avoid; margin-bottom: 8px; }
-    .sources a { color: var(--accent); }
-    .disclaimer { margin: 18px 0 0; color: var(--muted); font-size: 11px; }
-
-    footer { padding: 72px 0 38px; border-top: 1px solid var(--line); }
-    .footer-grid { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; }
-    footer h2 { margin: 0 0 14px; font-size: clamp(34px, 4.7vw, 52px); line-height: 1.05; letter-spacing: -.047em; }
-    footer p { margin: 0; color: var(--ink-soft); }
-    .footer-links { margin-top: 24px; }
-    .footer-links a { color: var(--accent); font-weight: 700; text-underline-offset: 4px; }
-    .footer-meta { color: var(--muted); font-size: 11px; text-align: right; }
-
-    @media (max-width: 860px) {
-      .location { display: none; }
-      .hero-grid, .section-heading, .current, .direction { grid-template-columns: 1fr; }
-      .hero-grid { gap: 34px; }
-      .section-heading { gap: 8px; }
-      .current { gap: 34px; }
-      .work-grid { grid-template-columns: 1fr; }
-      .work-card { min-height: 0; }
-      .career-row { grid-template-columns: 110px 180px minmax(0, 1fr); }
+    a:hover {
+      border-color: var(--text);
     }
-    @media (max-width: 600px) {
-      .shell { width: min(calc(100% - 28px), var(--max)); }
-      nav a:not(:last-child) { display: none; }
-      .hero { padding: 68px 0 58px; }
-      h1 { font-size: clamp(42px, 13vw, 58px); }
-      section { padding: 62px 0; }
-      .career-row { grid-template-columns: 1fr; gap: 7px; }
-      .career-row p { margin-top: 7px; }
-      .sources { columns: 1; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .footer-meta { text-align: left; }
+
+    a:focus-visible {
+      border-color: transparent;
+      border-radius: 2px;
+      outline: 3px solid var(--focus);
+      outline-offset: 5px;
     }
+
+    @media (max-width: 520px) {
+      main {
+        align-items: end;
+        padding-bottom: 64px;
+      }
+
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      * { transition: none !important; }
+      a { transition: none; }
     }
   </style>
 </head>
 <body>
-  <header class="shell topbar">
-    <a class="brand" href="#top">Dennis Wijers</a>
-    <nav aria-label="Primary navigation">
-      <a href="#work">Work</a>
-      <a href="#direction">What is next</a>
-      <a href="#experience">Experience</a>
-      <a href="Dennis_Wijers_Resume.pdf">Résumé</a>
-      <a href="https://www.linkedin.com/in/denniswijers" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-    </nav>
-    <span class="location">Fairfax, Virginia</span>
-  </header>
-
-  <main id="top">
-    <div class="shell hero">
-      <div class="hero-grid">
-        <div>
-          <p class="eyebrow">Hello, I’m Dennis</p>
-          <h1>I lead technical programs in space, cloud, and national security.</h1>
-        </div>
-        <div class="hero-copy">
-          <p>I work with engineers, operators, security teams, and government customers to make complex systems useful, secure, and dependable.</p>
-          <p>I’m based in Fairfax, Virginia, and currently work with Amazon Leo Government.</p>
-          <div class="actions">
-            <a class="button primary" href="#work">See my work</a>
-            <a class="button" href="Dennis_Wijers_Resume.pdf">View résumé</a>
-          </div>
-        </div>
-      </div>
+  <main>
+    <div class="intro">
+      <h1>Dennis Wijers</h1>
+      <p>Technology and program leader working across space, AI, cloud, and national security.</p>
+      <nav aria-label="Primary links">
+        <a href="https://www.linkedin.com/in/denniswijers/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="/about">About my work</a>
+      </nav>
     </div>
-
-    <section>
-      <div class="shell current">
-        <img src="assets/images/amazon-leo-ultra.png" alt="Amazon Leo Ultra enterprise satellite antenna">
-        <div class="current-copy">
-          <p class="eyebrow">What I’m doing now</p>
-          <h2>Amazon Leo Government</h2>
-          <p>Amazon Leo is building a low-Earth-orbit satellite network for customers who need reliable connectivity beyond the reach of existing infrastructure.</p>
-          <p>My work is on the government field-operations side. I focus on support-platform architecture, systems integration, identity, and the engineering work needed to support a complex service in the field.</p>
-          <p class="source-note">The image and program description come from Amazon’s public materials. The description of my role is based on my résumé and is not an official Amazon statement. <a href="https://www.aboutamazon.com/news/amazon-leo/amazon-leo-satellite-internet-ultra-pro">Amazon source ↗</a></p>
-        </div>
-      </div>
-    </section>
-
-    <section id="work">
-      <div class="shell">
-        <div class="section-heading">
-          <p class="eyebrow">Selected work</p>
-          <div>
-            <h2>Three programs that shaped how I work.</h2>
-            <p>Each one required technical judgment, steady coordination, and a clear understanding of the mission behind the system.</p>
-          </div>
-        </div>
-        <div class="work-grid">
-          <article class="work-card">
-            <span class="meta">GPS Directorate · 2016 to 2017</span>
-            <h3>GPS acquisition and program decisions</h3>
-            <p>On the GPS Program Executive Officer staff, I supported governance of a <strong>$32B portfolio</strong>. My work included GPS III funding, OCX control-segment risk, and a gap-filler strategy for senior leaders.</p>
-          </article>
-          <article class="work-card">
-            <span class="meta">Nuclear detection · 2014 to 2016</span>
-            <h3>A global ground system for trusted warning</h3>
-            <p>I led a <strong>$20M-per-year program</strong> across nine sites, working within a mission supported by Sandia and Los Alamos expertise. We forecast 20% lifecycle savings and delivered a $3M modernization 30 days early.</p>
-          </article>
-          <article class="work-card">
-            <span class="meta">NRO · 2017 to 2021</span>
-            <h3>Moving mission data across boundaries</h3>
-            <p>I led a <strong>55-person, $50M+ portfolio</strong> that integrated OPIR data and 15 additional feeds. The team moved a cross-domain platform from concept to a $10M deployment and secured a $26M follow-on.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="direction">
-      <div class="shell direction">
-        <div>
-          <p class="eyebrow">What I want to do next</p>
-          <h2>Keep working on difficult, useful technology.</h2>
-        </div>
-        <div class="direction-copy">
-          <p>I’m most interested in roles where commercial technology and public-sector missions meet. That could mean satellite connectivity, practical AI, secure infrastructure, or another field where the technical and organizational problems are tightly connected.</p>
-          <p>I do my best work when I can help a strong team find clarity, make good decisions, and turn a promising idea into something people can rely on.</p>
-          <div class="interest-list" aria-label="Professional interests">
-            <span>Space systems</span>
-            <span>Applied AI</span>
-            <span>Secure cloud</span>
-            <span>Cybersecurity</span>
-            <span>Government technology</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience">
-      <div class="shell">
-        <div class="section-heading">
-          <p class="eyebrow">Experience</p>
-          <div><h2>From military space programs to commercial technology.</h2></div>
-        </div>
-        <div class="career-list">
-          <article class="career-row">
-            <span class="years">2025 to present</span>
-            <h3>Amazon</h3>
-            <p>Amazon Leo Government and Foundational Security Services. Current work includes government support architecture and field operations. Earlier work focused on just-in-time privileged access across 14 fleets and more than 200 AWS services.</p>
-          </article>
-          <article class="career-row">
-            <span class="years">2021 to 2025</span>
-            <h3>Microsoft</h3>
-            <p>Strategic Ventures and Microsoft 365. Built programs in autonomous AI, quantum, and secure cloud, and helped two sovereign clouds reach authorization.</p>
-          </article>
-          <article class="career-row">
-            <span class="years">2010 to 2021</span>
-            <h3>National security space</h3>
-            <p>SAIC, the National Reconnaissance Office, and the U.S. Air Force. Work included Minuteman III operations, nuclear detonation detection, GPS acquisition, overhead intelligence, and space architecture.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <div class="shell logo-band" aria-label="Organizations in Dennis Wijers's career">
-      <p class="eyebrow">Experience across</p>
-      <div class="logos">
-        <div class="logo"><img src="assets/logos/amazon.svg" alt="Amazon"></div>
-        <div class="logo"><img src="assets/logos/microsoft.svg" alt="Microsoft"></div>
-        <div class="logo"><img src="assets/logos/saic.svg" alt="SAIC"></div>
-        <div class="logo"><img src="assets/logos/usaf.svg" alt="United States Air Force"></div>
-        <div class="logo seal"><img src="assets/logos/nro.svg" alt="National Reconnaissance Office"></div>
-      </div>
-    </div>
-
-    <section>
-      <div class="shell">
-        <details>
-          <summary>Public sources for program context</summary>
-          <ol class="sources">
-            <li><a href="https://www.aboutamazon.com/news/amazon-leo/amazon-leo-satellite-internet-ultra-pro">Amazon Leo enterprise announcement</a></li>
-            <li><a href="https://www.ssc.spaceforce.mil/About-Us/Fact-Sheets/Indextitle/G">Space Systems Command GPS fact sheets</a></li>
-            <li><a href="https://www.sandia.gov/space/our-mission/">Sandia nuclear detonation detection mission</a></li>
-            <li><a href="https://cdn.lanl.gov/spring-2022-online_e09f3.pdf">Los Alamos space-based nuclear detection overview</a></li>
-            <li><a href="https://www.nro.gov/About-NRO/Mission-Partners-and-Customers/">NRO mission partners and customers</a></li>
-            <li><a href="https://www.nga.mil/news/NGA_USSF_Sign_TacSRT_Agreenment.html">NGA and U.S. Space Force partnership</a></li>
-          </ol>
-        </details>
-        <p class="disclaimer">Public mission context comes from unclassified sources. Personal contributions and figures come from my résumé. Organization names and marks identify employment or mission context and do not imply endorsement.</p>
-      </div>
-    </section>
   </main>
-
-  <footer>
-    <div class="shell footer-grid">
-      <div>
-        <p class="eyebrow">Thanks for stopping by</p>
-        <h2>Let’s stay in touch.</h2>
-        <p>If you’re working on an interesting problem in space, AI, secure cloud, or government technology, I’d be glad to hear about it.</p>
-        <p class="footer-links"><a href="mailto:hello@denniswijers.com">Email</a> · <a href="https://www.linkedin.com/in/denniswijers" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="https://github.com/DWijers">GitHub</a> · <a href="Dennis_Wijers_Resume.pdf">Résumé</a></p>
-      </div>
-      <div class="footer-meta"><p>Fairfax, Virginia<br>© 2026 Dennis Wijers</p></div>
-    </div>
-  </footer>
 </body>
 </html>
 

@@ -6,3 +6,7 @@
 
 /Dennis_Wijers_Resume.pdf
   Cache-Control: public, max-age=3600
+
+/Dennis-Wijers-Resume.pdf
+  Cache-Control: public, max-age=3600
+  Content-Disposition: inline; filename="Dennis-Wijers-Resume.pdf"
