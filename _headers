@@ -8,5 +8,5 @@
   Cache-Control: public, max-age=3600
 
 /Dennis-Wijers-Resume.pdf
-  Cache-Control: public, max-age=3600
+  Cache-Control: public, max-age=0, must-revalidate
   Content-Disposition: inline; filename="Dennis-Wijers-Resume.pdf"
