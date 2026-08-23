@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Dennis Wijers is a technology and program leader working across space, AI, cloud, and national security.">
-  <meta name="theme-color" content="#f4f2ed">
+  <meta name="theme-color" content="#f3f4f1">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://denniswijers.com/">
   <meta property="og:title" content="Dennis Wijers">
@@ -16,15 +16,16 @@
   <style>
     :root {
       color-scheme: light;
-      --background: #f4f2ed;
-      --text: #1e1e1b;
-      --muted: #5f5e58;
-      --line: #cbc8bf;
-      --focus: #245a87;
+      --background: #f3f4f1;
+      --text: #182631;
+      --muted: #59666c;
+      --line: #cbd2d0;
+      --accent: #2a6387;
+      --focus: #2a6387;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
     }
 
     * { box-sizing: border-box; }
-
     html { min-width: 320px; }
 
     body {
@@ -36,94 +37,253 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    main {
-      min-height: 100vh;
+    main { min-height: 100vh; padding: clamp(28px, 4vw, 52px); }
+
+    .frame {
+      position: relative;
+      isolation: isolate;
+      width: min(100%, 1280px);
+      min-height: calc(100vh - clamp(56px, 8vw, 104px));
+      margin: 0 auto;
       display: grid;
-      align-items: center;
-      padding: clamp(48px, 9vw, 112px) clamp(24px, 7vw, 96px);
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      grid-template-rows: 82px minmax(0, 1fr) auto;
+      overflow: hidden;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
-    .intro {
-      width: min(100%, 760px);
+    .frame::before {
+      content: "";
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      background-image: linear-gradient(90deg, rgba(24, 38, 49, .035) 1px, transparent 1px);
+      background-size: calc(100% / 12) 100%;
+      pointer-events: none;
+    }
+
+    .top-rail {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .document-id {
+      grid-column: 1 / 4;
+      color: var(--accent);
+      font: 600 10px/1.4 var(--mono);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .document-id::before {
+      content: "";
+      display: inline-block;
+      width: 18px;
+      height: 1px;
+      margin-right: 10px;
+      vertical-align: middle;
+      background: currentColor;
+    }
+
+    nav {
+      grid-column: 7 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(18px, 2.4vw, 32px);
+    }
+
+    nav a {
+      position: relative;
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 620;
+      text-decoration: none;
+      transition: color 180ms ease;
+    }
+
+    nav a::before { content: attr(data-index); color: var(--accent); font: 600 9px/1 var(--mono); letter-spacing: .06em; }
+    nav a::after { content: ""; position: absolute; right: 0; bottom: 5px; left: 0; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 220ms ease; }
+    nav a:hover { color: var(--text); }
+    nav a:hover::after { transform: scaleX(1); }
+
+    .identity {
+      position: relative;
+      z-index: 2;
+      grid-column: 2 / 8;
+      grid-row: 2;
+      align-self: start;
+      padding-top: clamp(64px, 10vh, 104px);
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(42px, 7vw, 72px);
-      font-weight: 650;
-      line-height: 1;
-      letter-spacing: -0.055em;
+      font-size: clamp(48px, 6.2vw, 70px);
+      font-weight: 670;
+      line-height: .98;
+      letter-spacing: -.058em;
     }
 
-    p {
+    .positioning {
       max-width: 650px;
-      margin: 30px 0 0;
+      margin: 28px 0 0;
       color: var(--muted);
-      font-size: clamp(20px, 2.4vw, 28px);
-      line-height: 1.45;
-      letter-spacing: -0.022em;
+      font-size: clamp(20px, 2.1vw, 27px);
+      line-height: 1.42;
+      letter-spacing: -.024em;
     }
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px 34px;
-      margin-top: clamp(46px, 7vw, 72px);
+    .system-map {
+      position: absolute;
+      z-index: 1;
+      top: clamp(250px, 39vh, 330px);
+      left: 0;
+      width: 100%;
+      height: auto;
+      color: var(--accent);
+      opacity: .5;
+      pointer-events: none;
+      transition: opacity 240ms ease;
     }
 
-    a {
+    .system-map path,
+    .system-map circle { vector-effect: non-scaling-stroke; }
+    .system-map path { fill: none; stroke: currentColor; stroke-width: 1; }
+    .system-map circle { fill: var(--background); stroke: currentColor; stroke-width: 1; }
+    .system-map text { fill: currentColor; font: 600 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .trace-main { stroke-dasharray: 1; stroke-dashoffset: 1; animation: trace-in 1100ms cubic-bezier(.2, .7, .2, 1) 120ms forwards; }
+    .trace-branch { stroke-dasharray: 1; stroke-dashoffset: 1; animation: trace-in 700ms ease 850ms forwards; }
+    .stage { opacity: 0; animation: stage-in 320ms ease forwards; }
+    .stage:nth-of-type(1) { animation-delay: 320ms; }
+    .stage:nth-of-type(2) { animation-delay: 440ms; }
+    .stage:nth-of-type(3) { animation-delay: 560ms; }
+    .stage:nth-of-type(4) { animation-delay: 680ms; }
+    .stage:nth-of-type(5) { animation-delay: 800ms; }
+    .stage:nth-of-type(6) { animation-delay: 920ms; }
+
+    .career-hook {
+      position: relative;
+      z-index: 2;
+      grid-column: 8 / 13;
+      grid-row: 3;
+      align-self: end;
+      margin: 0 0 clamp(34px, 5vh, 52px);
+      padding: 22px 0 0 30px;
+      border-top: 1px solid var(--line);
+      background: rgba(243, 244, 241, .9);
+    }
+
+    .hook-label { margin: 0 0 14px; color: var(--accent); font: 600 10px/1.4 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    .hook-copy { margin: 0; color: var(--text); font-size: clamp(17px, 1.65vw, 21px); line-height: 1.5; letter-spacing: -.018em; }
+
+    .hook-link {
       display: inline-flex;
       align-items: center;
-      min-height: 44px;
+      gap: 10px;
+      min-height: 42px;
+      margin-top: 20px;
       border-bottom: 1px solid var(--line);
       color: var(--text);
-      font-size: 16px;
-      font-weight: 600;
+      font-size: 14px;
+      font-weight: 680;
       text-decoration: none;
-      transition: border-color 150ms ease, color 150ms ease;
+      transition: color 180ms ease, border-color 180ms ease;
     }
 
-    a:hover {
-      border-color: var(--text);
+    .hook-link span { color: var(--accent); transition: transform 180ms ease; }
+    .hook-link:hover { color: var(--accent); border-color: var(--accent); }
+    .hook-link:hover span { transform: translateX(3px); }
+    .frame:has(.about-link:hover) .system-map { opacity: .72; }
+    .frame:has(.about-link:hover) .stage:last-of-type circle { fill: var(--accent); }
+
+    .stage-rail { display: none; }
+
+    a:focus-visible { border-radius: 2px; outline: 3px solid var(--focus); outline-offset: 5px; }
+
+    @keyframes trace-in { to { stroke-dashoffset: 0; } }
+    @keyframes stage-in { to { opacity: 1; } }
+
+    @media (max-width: 900px) {
+      .top-rail { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+      .document-id { grid-column: 1 / 3; }
+      nav { grid-column: 3 / -1; }
+      .identity { grid-column: 1 / 7; padding-inline: 24px; }
+      .career-hook { grid-column: 7 / 13; }
+      .system-map { top: 300px; }
     }
 
-    a:focus-visible {
-      border-color: transparent;
-      border-radius: 2px;
-      outline: 3px solid var(--focus);
-      outline-offset: 5px;
-    }
-
-    @media (max-width: 520px) {
-      main {
-        align-items: end;
-        padding-bottom: 64px;
-      }
-
-      nav {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 14px;
-      }
+    @media (max-width: 700px) {
+      main { padding: 20px; }
+      .frame { min-height: calc(100vh - 40px); display: block; overflow: hidden; }
+      .frame::before { background-size: 25% 100%; }
+      .top-rail { min-height: 108px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 10px; padding: 14px 18px; }
+      .document-id::before { width: 10px; margin-right: 7px; }
+      nav { width: 100%; justify-content: flex-start; flex-wrap: wrap; gap: 4px 20px; }
+      nav a { min-height: 30px; font-size: 11px; }
+      .identity { padding: 64px 18px 0; }
+      h1 { font-size: clamp(44px, 13vw, 58px); }
+      .positioning { margin-top: 24px; font-size: 20px; }
+      .system-map { position: relative; top: auto; left: -18%; width: 136%; margin-top: 54px; opacity: .42; }
+      .system-map text { display: none; }
+      .stage-rail { display: flex; justify-content: space-between; gap: 6px; margin: -6px 18px 0; color: var(--accent); font: 600 7px/1.4 var(--mono); letter-spacing: .04em; text-transform: uppercase; }
+      .career-hook { margin: 54px 18px 44px; padding: 20px 0 0; background: rgba(243, 244, 241, .92); }
+      .hook-copy { font-size: 18px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      a { transition: none; }
+      * { animation: none !important; transition: none !important; }
+      .trace-main,
+      .trace-branch { stroke-dashoffset: 0; }
+      .stage { opacity: 1; }
     }
   </style>
 </head>
 <body>
   <main>
-    <div class="intro">
-      <h1>Dennis Wijers</h1>
-      <p>Technology and program leader working across space, AI, cloud, and national security.</p>
-      <nav aria-label="Primary links">
-        <a href="/contact">Contact me</a>
-        <a href="https://www.linkedin.com/in/denniswijers/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="/about">About my work</a>
-      </nav>
+    <div class="frame">
+      <header class="top-rail">
+        <span class="document-id">00 / Index</span>
+        <nav aria-label="Primary links">
+          <a class="about-link" data-index="02" href="/about">About my work</a>
+          <a data-index="R" href="/Dennis-Wijers-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a data-index="01" href="/contact">Contact</a>
+          <a data-index="↗" href="https://www.linkedin.com/in/denniswijers/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </nav>
+      </header>
+
+      <section class="identity" aria-labelledby="name">
+        <h1 id="name">Dennis Wijers</h1>
+        <p class="positioning">Technology and program leader working across space, AI, cloud, and national security.</p>
+      </section>
+
+      <svg class="system-map" viewBox="0 0 1200 260" aria-hidden="true" focusable="false">
+        <path class="trace-main" pathLength="1" d="M0 198H135V145H300V190H465V105H630V150H795V80H990V45H1200" />
+        <path class="trace-branch" pathLength="1" d="M300 190V236H520V210H690" />
+        <path class="trace-branch" pathLength="1" d="M630 150V34H888" />
+        <g class="stage"><circle cx="135" cy="145" r="4"/><text x="135" y="124" text-anchor="middle">01 / Ops</text></g>
+        <g class="stage"><circle cx="300" cy="190" r="4"/><text x="300" y="219" text-anchor="middle">02 / Space</text></g>
+        <g class="stage"><circle cx="465" cy="105" r="4"/><text x="465" y="84" text-anchor="middle">03 / Infra</text></g>
+        <g class="stage"><circle cx="630" cy="150" r="4"/><text x="630" y="179" text-anchor="middle">04 / Cloud</text></g>
+        <g class="stage"><circle cx="795" cy="80" r="4"/><text x="795" y="59" text-anchor="middle">05 / AI</text></g>
+        <g class="stage"><circle cx="990" cy="45" r="4"/><text x="990" y="24" text-anchor="middle">06 / Satcom</text></g>
+      </svg>
+
+      <div class="stage-rail" aria-hidden="true"><span>Ops</span><span>Space</span><span>Infra</span><span>Cloud</span><span>AI</span><span>Satcom</span></div>
+
+      <section class="career-hook" aria-labelledby="career-arc">
+        <p class="hook-label" id="career-arc">Signal / Career arc</p>
+        <p class="hook-copy">My work has moved from nuclear operations and national-security space systems to secure cloud, AI, and commercial satellite communications.</p>
+        <a class="hook-link" href="/about">About my work <span aria-hidden="true">→</span></a>
+      </section>
     </div>
   </main>
 </body>
 </html>
-

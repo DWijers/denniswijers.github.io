@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Contact Dennis Wijers.">
-  <meta name="theme-color" content="#f4f2ed">
+  <meta name="theme-color" content="#f3f4f1">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://denniswijers.com/contact">
   <meta property="og:title" content="Contact Dennis Wijers">
@@ -16,33 +16,30 @@
   <style>
     :root {
       color-scheme: light;
-      --background: #f4f2ed;
-      --surface: #eeece6;
-      --text: #1e1e1b;
-      --muted: #5f5e58;
-      --line: #cbc8bf;
-      --focus: #245a87;
+      --background: #f3f4f1;
+      --text: #182631;
+      --muted: #59666c;
+      --line: #cbd2d0;
+      --accent: #2a6387;
+      --focus: #2a6387;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
     }
 
     * { box-sizing: border-box; }
-
     html { min-width: 320px; }
 
     body {
       min-height: 100vh;
       margin: 0;
-      background: var(--background);
+      background-color: var(--background);
+      background-image: repeating-linear-gradient(90deg, transparent 0, transparent calc(8.333vw - 1px), rgba(24, 38, 49, .018) calc(8.333vw - 1px), rgba(24, 38, 49, .018) 8.333vw);
       color: var(--text);
       font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       -webkit-font-smoothing: antialiased;
     }
 
     a { color: inherit; }
-
-    .shell {
-      width: min(calc(100% - 48px), 1080px);
-      margin: 0 auto;
-    }
+    .shell { width: min(calc(100% - 48px), 1160px); margin: 0 auto; }
 
     header {
       min-height: 80px;
@@ -50,48 +47,44 @@
       align-items: center;
       justify-content: space-between;
       gap: 28px;
+      border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
+      margin-top: 24px;
     }
 
-    .brand {
-      font-size: 17px;
-      font-weight: 750;
-      letter-spacing: -0.025em;
-      text-decoration: none;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 26px;
-      font-size: 14px;
-    }
-
-    nav a {
-      color: var(--muted);
-      text-decoration: none;
-    }
-
+    .brand { font-size: 16px; font-weight: 750; letter-spacing: -.025em; text-decoration: none; }
+    nav { display: flex; align-items: center; gap: 26px; font: 600 11px/1.4 var(--mono); letter-spacing: .04em; text-transform: uppercase; }
+    nav a { color: var(--muted); text-decoration: none; transition: color 150ms ease; }
     nav a:hover,
-    .direct-email:hover {
-      color: var(--text);
-    }
+    .direct-email:hover { color: var(--accent); }
 
     main {
+      position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+      grid-template-columns: minmax(0, .82fr) minmax(360px, 1.18fr);
       gap: clamp(64px, 9vw, 128px);
-      padding-top: clamp(72px, 10vw, 128px);
+      min-height: calc(100vh - 105px);
+      padding-top: clamp(76px, 10vw, 128px);
       padding-bottom: clamp(72px, 10vw, 128px);
     }
 
-    h1 {
-      margin: 0;
-      font-size: clamp(44px, 6vw, 68px);
-      font-weight: 650;
-      line-height: 1;
-      letter-spacing: -0.055em;
+    main::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: calc(41% + 1px);
+      width: 1px;
+      background: rgba(24, 38, 49, .06);
+      pointer-events: none;
     }
+
+    .intro { position: relative; z-index: 1; }
+    .section-id,
+    .form-id { margin: 0 0 28px; color: var(--accent); font: 600 11px/1.4 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    .section-id::before { content: ""; display: inline-block; width: 18px; height: 1px; margin-right: 10px; vertical-align: middle; background: var(--accent); }
+
+    h1 { margin: 0; font-size: clamp(44px, 6vw, 68px); font-weight: 670; line-height: .98; letter-spacing: -.058em; }
 
     .direct-email {
       display: inline-block;
@@ -101,108 +94,79 @@
       font-weight: 650;
       line-height: 2;
       text-decoration: none;
+      transition: color 150ms ease, border-color 150ms ease;
     }
 
-    form {
-      display: grid;
-      gap: 24px;
-    }
+    .system-map { width: min(100%, 360px); margin-top: 78px; color: var(--accent); opacity: .24; pointer-events: none; }
+    .system-map path,
+    .system-map circle { vector-effect: non-scaling-stroke; }
+    .system-map path { fill: none; stroke: currentColor; stroke-width: 1; }
+    .system-map circle { fill: var(--background); stroke: currentColor; stroke-width: 1; }
 
-    .field {
-      display: grid;
-      gap: 9px;
-    }
+    form { display: grid; gap: 26px; align-self: start; }
+    .form-id { margin-bottom: 2px; }
+    .field { display: grid; gap: 8px; }
 
-    label {
-      font-size: 14px;
-      font-weight: 650;
-    }
+    label { color: var(--accent); font: 600 10px/1.4 var(--mono); letter-spacing: .09em; text-transform: uppercase; }
 
     input,
     textarea {
       width: 100%;
-      border: 1px solid var(--line);
-      border-radius: 4px;
-      background: rgba(255, 255, 255, 0.42);
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
       color: var(--text);
       font: inherit;
       font-size: 16px;
       line-height: 1.5;
+      transition: border-color 150ms ease;
     }
 
-    input { min-height: 52px; padding: 12px 14px; }
-
-    textarea {
-      min-height: 176px;
-      padding: 13px 14px;
-      resize: vertical;
-    }
-
+    input { min-height: 50px; padding: 10px 0; }
+    textarea { min-height: 154px; padding: 10px 0; resize: vertical; }
     input::placeholder,
-    textarea::placeholder { color: #77756e; }
+    textarea::placeholder { color: #7a8588; }
+    input:hover,
+    textarea:hover { border-color: var(--muted); }
 
     button {
       justify-self: start;
-      min-height: 48px;
-      padding: 0 20px;
+      min-height: 46px;
+      padding: 0 18px;
       border: 1px solid var(--text);
-      border-radius: 4px;
+      border-radius: 0;
       background: transparent;
       color: var(--text);
       cursor: pointer;
-      font: inherit;
-      font-size: 15px;
-      font-weight: 700;
-      transition: background-color 150ms ease, color 150ms ease;
+      font: 600 11px/1 var(--mono);
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      transition: background-color 150ms ease, color 150ms ease, transform 150ms ease;
     }
 
-    button:hover {
-      background: var(--text);
-      color: var(--background);
-    }
+    button:hover { background: var(--text); color: var(--background); transform: translateY(-1px); }
+    button:disabled { cursor: wait; opacity: .62; }
 
-    .form-note {
-      min-height: 20px;
-      margin: -8px 0 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
+    .form-note { min-height: 20px; margin: -8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
     .form-note[data-state="error"] { color: #8a2f2f; }
-
-    .form-honeypot {
-      display: none;
-    }
-
-    button:disabled {
-      cursor: wait;
-      opacity: 0.62;
-    }
+    .form-honeypot { display: none; }
 
     a:focus-visible,
     button:focus-visible,
     input:focus-visible,
-    textarea:focus-visible {
-      outline: 3px solid var(--focus);
-      outline-offset: 4px;
-    }
-
+    textarea:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
     input:focus-visible,
-    textarea:focus-visible { outline-offset: 1px; }
+    textarea:focus-visible { border-color: var(--accent); outline-offset: 1px; }
 
     @media (max-width: 760px) {
-      .shell { width: min(calc(100% - 36px), 1080px); }
-
-      header { min-height: 72px; }
-
+      body { background-size: 25vw 100%; }
+      .shell { width: min(calc(100% - 36px), 1160px); }
+      header { min-height: 72px; margin-top: 18px; }
       nav { gap: 18px; }
-
-      main {
-        grid-template-columns: 1fr;
-        gap: 56px;
-        padding-top: 64px;
-      }
+      main { grid-template-columns: 1fr; gap: 60px; min-height: auto; padding-top: 64px; }
+      main::before { display: none; }
+      .system-map { width: min(78vw, 360px); margin-top: 54px; }
     }
 
     @media (max-width: 460px) {
@@ -211,29 +175,39 @@
       button { width: 100%; }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      button { transition: none; }
-    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
   </style>
 </head>
 <body>
   <header class="shell">
     <a class="brand" href="/">Dennis Wijers</a>
     <nav aria-label="Primary navigation">
-      <a href="/about">About my work</a>
-      <a href="https://www.linkedin.com/in/denniswijers/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="/about">02 / About</a>
+      <a href="https://www.linkedin.com/in/denniswijers/" target="_blank" rel="noopener noreferrer">Ext / LinkedIn</a>
     </nav>
   </header>
 
   <main class="shell">
     <div class="intro">
+      <p class="section-id">01 / Contact</p>
       <h1>Contact me</h1>
       <a class="direct-email" href="mailto:hello@denniswijers.com">hello@denniswijers.com</a>
+      <svg class="system-map" viewBox="0 0 540 176" aria-hidden="true" focusable="false">
+        <path d="M1 70H116V25H250V129H376V80H539" />
+        <path d="M116 70V148H315V129" />
+        <path d="M250 25H418V80" />
+        <circle cx="116" cy="70" r="4" />
+        <circle cx="250" cy="25" r="4" />
+        <circle cx="250" cy="129" r="4" />
+        <circle cx="315" cy="148" r="4" />
+        <circle cx="376" cy="80" r="4" />
+        <circle cx="418" cy="80" r="4" />
+      </svg>
     </div>
 
     <form id="contact-form" action="https://formspree.io/f/mdenjjdo" method="post">
+      <p class="form-id">01.1 / Message</p>
       <input type="hidden" name="_subject" value="New message from denniswijers.com">
-
       <input class="form-honeypot" name="_gotcha" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
 
       <div class="field">
@@ -258,13 +232,11 @@
 
   <script>
     const form = document.querySelector("#contact-form");
-
     const submitButton = form.querySelector("button[type='submit']");
     const status = document.querySelector("#form-status");
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
-
       submitButton.disabled = true;
       submitButton.textContent = "Sending...";
       status.textContent = "";
@@ -277,10 +249,7 @@
           headers: { Accept: "application/json" }
         });
 
-        if (!response.ok) {
-          throw new Error("Submission failed");
-        }
-
+        if (!response.ok) throw new Error("Submission failed");
         form.reset();
         status.textContent = "Thanks. Your message has been sent.";
       } catch {
